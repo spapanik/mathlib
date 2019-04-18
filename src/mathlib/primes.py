@@ -1,4 +1,5 @@
 import math
+from itertools import count
 
 
 def _miller_rabin_loop(witness, mantissa, power, n):
@@ -82,3 +83,28 @@ def is_prime(n):
             return False
 
     return True
+
+
+def next_prime(n):
+    """
+    Get the smallest prime that is larger than n.
+
+    :param n: the number where we start the search for a prime
+    :type n: int
+    :return: the smallest prime greater than n
+    :rtype: int
+    """
+    if n < 2:
+        return 2
+
+    if n == 2:
+        return 3
+
+    if n & 1 == 1:
+        n += 2
+    else:
+        n += 1
+
+    for n in count(n, 2):
+        if is_prime(n):
+            return n

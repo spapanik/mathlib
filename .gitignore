@@ -1,0 +1,11 @@
+# Compiled files
+__pycache__/
+
+# tests
+.pytest_cache/
+
+# installation
+requirements.txt
+
+# Distribution / packaging
+pip-wheel-metadata/

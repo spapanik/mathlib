@@ -1,0 +1,35 @@
+[tool.black]
+line-length = 79
+target-version = ["py36", "py37", "py38"]
+
+[tool.poetry]
+name = "mathlib"
+version = "0.1.0"
+description = "A pure-python maths library"
+authors = ["spapanik <spapanik21@gmail.com>"]
+
+license = "LGPLv3"
+readme = "readme.md"
+
+repository = "https://github.com/spapanik/mathlib"
+
+keywords = ["mathematics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+black = {version = "*", allows-prereleases = true}
+pytest = "^4.4"
+ipdb = "^0.12"
+ipython = "^7.4"
+isort = "^4.3"

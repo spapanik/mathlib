@@ -108,3 +108,17 @@ def next_prime(n):
     for n in count(n, 2):
         if is_prime(n):
             return n
+
+
+def primes():
+    """
+    Make an iterator that returns the prime numbers in ascending order.
+
+    :return: An iterator of the prime numbers
+    :rtype: Iterator[int]
+    """
+    yield 2
+
+    for n in count(3, 2):
+        if is_prime(n):
+            yield n

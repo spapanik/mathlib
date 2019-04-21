@@ -18,3 +18,12 @@ def test_is_not_prime(number):
 )
 def test_next_prime(number, prime):
     assert primes.next_prime(number) == prime
+
+
+def test_primes():
+    prime_numbers = []
+    for prime in primes.primes():
+        if prime > 30:
+            break
+        prime_numbers.append(prime)
+    assert prime_numbers == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]

@@ -15,7 +15,7 @@ def _miller_rabin_loop(witness, mantissa, power, n):
 
 def _miller_rabin_witnesses(n):
     if n < 2047:
-        return 2,
+        return (2,)
 
     if n < 1373653:
         return 2, 3

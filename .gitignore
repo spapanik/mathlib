@@ -9,3 +9,4 @@ requirements.txt
 
 # Distribution / packaging
 pip-wheel-metadata/
+dist/

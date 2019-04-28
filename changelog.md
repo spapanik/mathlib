@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # Added
 - Method to return the nth Fibonacci number.
 - Generator of primes up to a bound.
+- Generator of Fibonacci numbers.
 
 ## [0.1.1] - 2019-04-26
 # Added

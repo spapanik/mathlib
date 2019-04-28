@@ -26,3 +26,22 @@ def fibonacci(n):
     if n < 0:
         return ((-1) ** (1 - n)) * fib(-n)
     return fib(n)
+
+
+def fibonacci_numbers(a=0, b=1):
+    """
+    Make an iterator that returns the Fibonacci numbers.
+
+    The Fibonacci sequence is configurable, in the sense that the two
+    initial values of it can be passed as arguments.
+
+    :param a: The first of the two initial values
+    :param b: The second of the two initial values
+    :type a: int
+    :type b: int
+    :return: An iterator of the Fibonacci numbers
+    :rtype: Iterator[int]
+    """
+    while True:
+        yield a
+        a, b = b, a + b

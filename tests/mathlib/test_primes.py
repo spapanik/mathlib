@@ -3,6 +3,22 @@ import pytest
 from mathlib import primes
 
 
+@pytest.mark.parametrize(
+    ["upper_bound", "prime_numbers"],
+    [
+        [2, []],
+        [3, [2]],
+        [4, [2, 3]],
+        [5, [2, 3]],
+        [6, [2, 3, 5]],
+        [11, [2, 3, 5, 7]],
+        [12, [2, 3, 5, 7, 11]],
+    ],
+)
+def test_sieve_two_arguments(upper_bound, prime_numbers):
+    assert list(primes.sieve(upper_bound)) == prime_numbers
+
+
 @pytest.mark.parametrize("number", (2, 3, 5, 41, 97, 593441861))
 def test_is_prime(number):
     assert primes.is_prime(number) is True

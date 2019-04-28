@@ -2,6 +2,46 @@ import math
 from itertools import count
 
 
+def sieve(upper_bound):
+    """
+    Make an iterator that returns the primes up to upper_bound
+
+    This method uses the sieve of Eratosthenes to return the
+    primes.
+
+    :param upper_bound: The upper bound
+    :type upper_bound: int
+    :return: An iterator of the prime numbers
+    :rtype: Iterator[int]
+    """
+    if upper_bound <= 5:
+        if upper_bound > 2:
+            yield 2
+
+        if upper_bound > 3:
+            yield 3
+
+        return
+
+    yield 2
+
+    upper_bound = (upper_bound >> 1) - 1
+    indices = [True] * upper_bound
+    end_range = int(math.sqrt(upper_bound)) + 1
+    for i in range(end_range):
+        if indices[i]:
+            slice_start = 2 * i * i + 6 * i + 3
+            slice_step = 2 * i + 3
+            number_of_primes = math.ceil(
+                (upper_bound - slice_start) / slice_step
+            )
+            indices[slice_start::slice_step] = [False] * number_of_primes
+
+    for i in range(upper_bound):
+        if indices[i]:
+            yield 2 * i + 3
+
+
 def _miller_rabin_loop(witness, mantissa, power, n):
     if pow(witness, mantissa, n) == 1:
         return False

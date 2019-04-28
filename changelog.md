@@ -9,8 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Method to return the nth Fibonacci number.
 
 ## [0.1.1] - 2019-04-26
+# Added
 - Method to give the next prime.
-- Generator of prime numbers
+- Generator of prime numbers.
 
 ## [0.1.0] - 2019-04-18
 ### Added

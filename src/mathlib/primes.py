@@ -1,5 +1,5 @@
 import math
-from itertools import count
+from itertools import chain, count
 from typing import Iterator
 
 
@@ -145,3 +145,24 @@ def primes() -> Iterator[int]:
     for n in count(3, 2):
         if is_prime(n):
             yield n
+
+
+def divisor_sigma(n: int, x: int = 0) -> int:
+    """
+    Calculate the sum of the xth powers of the positive divisors of n
+    """
+    out = 1
+    for prime_div in chain([2], count(3, 2)):
+        power = 1
+        while n % prime_div == 0:
+            power += 1
+            n //= prime_div
+        if power != 1:
+            if x == 0:
+                out *= power
+            elif x == 1:
+                out *= (prime_div ** power - 1) // (prime_div - 1)
+            else:
+                out *= (prime_div ** (x * power) - 1) // (prime_div ** x - 1)
+            if n == 1:
+                return out

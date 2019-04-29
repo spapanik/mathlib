@@ -43,3 +43,13 @@ def test_primes():
             break
         prime_numbers.append(prime)
     assert prime_numbers == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+
+@pytest.mark.parametrize(
+    ["n", "divisors"],
+    [[10, [1, 2, 5, 10]], [12, [1, 2, 3, 4, 6, 12]], [13, [1, 13]]],
+)
+def test_divisor_sigma(n, divisors):
+    for x in range(5):
+        expected = sum(map(lambda d: d ** x, divisors))
+        assert primes.divisor_sigma(n, x) == expected

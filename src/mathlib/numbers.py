@@ -1,3 +1,24 @@
+import math
+
+
+def lcm(a, b):
+    """
+    Find the least common multiple of a and b.
+
+    The least common multiple of a and 0 is always 0, as this
+    coincides with lcm to be the least upper bound in the
+    lattice of divisibility.
+
+    :param a: The first of the numbers to find the lcm
+    :param b: The second of the numbers to find the lcm
+    :type a: int
+    :type b: int
+    :return: The least common multiple of a and b
+    :rtype: int
+    """
+    return a * b // math.gcd(a, b)
+
+
 def fibonacci(n):
     """
     Return the nth Fibonacci number.

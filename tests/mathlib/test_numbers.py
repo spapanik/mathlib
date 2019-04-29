@@ -4,6 +4,13 @@ from mathlib import numbers
 
 
 @pytest.mark.parametrize(
+    ["a", "b", "expected"], [[1, 2, 2], [6, 4, 12], [6, 4, 12]]
+)
+def test_lcm(a, b, expected):
+    assert numbers.lcm(a, b) == expected
+
+
+@pytest.mark.parametrize(
     ["n", "expected"],
     (
         (0, 1),

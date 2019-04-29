@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Method to return the nth Fibonacci number.
 - Generator of primes up to a bound.
 - Generator of Fibonacci numbers.
+- Method to return the least common multiple of two numbers.
 
 ## [0.1.1] - 2019-04-26
 # Added

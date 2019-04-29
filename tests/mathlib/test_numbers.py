@@ -11,6 +11,15 @@ def test_lcm(a, b, expected):
 
 
 @pytest.mark.parametrize(
+    ["a", "b"], [[7, 3], [872, 7959], [7959, 872], [42, 35129]]
+)
+def test_modular_inverse(a, b):
+    inverse = numbers.modular_inverse(a, b)
+    assert 0 < inverse < b
+    assert (a * inverse) % b == 1
+
+
+@pytest.mark.parametrize(
     ["n", "expected"],
     [
         [0, 1],

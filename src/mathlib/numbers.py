@@ -13,6 +13,27 @@ def lcm(a: int, b: int) -> int:
     return a * b // math.gcd(a, b)
 
 
+def modular_inverse(n: int, mod: int) -> int:
+    """
+    Find the modular inverse of n modulo mod.
+
+    The algorithm is based on using the Extended Euclid Algorithm,
+    to solve the diophantine equation n*x + mod*y = 1.
+    """
+    original_modulo = mod
+    x = 1
+    y = 0
+
+    while n > 1:
+        x, y = y, x - (n // mod) * y
+        n, mod = mod, n % mod
+
+    if x < 0:
+        x += original_modulo
+
+    return x
+
+
 def fibonacci(n: int, a: int = 1, b: int = 1) -> int:
     """
     Return the nth Fibonacci number.

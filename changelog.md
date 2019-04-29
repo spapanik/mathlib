@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Added
 - Configurable initial values in method to return the nth Fibonacci number.
+- Method to find the modular multiplicative inverse of a number.
 
 ## [0.1.2] - 2019-04-29
 ### Added

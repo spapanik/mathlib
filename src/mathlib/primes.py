@@ -1,18 +1,14 @@
 import math
 from itertools import count
+from typing import Iterator
 
 
-def sieve(upper_bound):
+def sieve(upper_bound: int) -> Iterator[int]:
     """
     Make an iterator that returns the primes up to upper_bound
 
     This method uses the sieve of Eratosthenes to return the
     primes.
-
-    :param upper_bound: The upper bound
-    :type upper_bound: int
-    :return: An iterator of the prime numbers
-    :rtype: Iterator[int]
     """
     if upper_bound <= 5:
         if upper_bound > 2:
@@ -93,7 +89,7 @@ def _miller_rabin_witnesses(n):
     return range(2, math.floor(2 * (math.log(n) ** 2)) + 1)
 
 
-def is_prime(n):
+def is_prime(n: int) -> bool:
     """
     Check if n is a prime number.
 
@@ -101,11 +97,6 @@ def is_prime(n):
     seems a good enough compromise. It is very fast for up to 81-bit
     integers, after which it is starts slowing down, due to the fact
     that we need to check for all possible Miller-Rabin witnesses.
-
-    :param n: the number to be tested for primality
-    :type n: int
-    :return: True if is a prime number, False otherwise
-    :rtype: bool
     """
     if n < 5:
         return n in (2, 3)
@@ -125,14 +116,9 @@ def is_prime(n):
     return True
 
 
-def next_prime(n):
+def next_prime(n: int) -> int:
     """
     Get the smallest prime that is larger than n.
-
-    :param n: the number where we start the search for a prime
-    :type n: int
-    :return: the smallest prime greater than n
-    :rtype: int
     """
     if n < 2:
         return 2
@@ -150,12 +136,9 @@ def next_prime(n):
             return n
 
 
-def primes():
+def primes() -> Iterator[int]:
     """
     Make an iterator that returns the prime numbers in ascending order.
-
-    :return: An iterator of the prime numbers
-    :rtype: Iterator[int]
     """
     yield 2
 

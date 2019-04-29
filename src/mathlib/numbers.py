@@ -13,13 +13,13 @@ def lcm(a: int, b: int) -> int:
     return a * b // math.gcd(a, b)
 
 
-def fibonacci(n: int) -> int:
+def fibonacci(n: int, a: int = 1, b: int = 1) -> int:
     """
     Return the nth Fibonacci number.
 
     n can be a negative integer as well.
     """
-    values = {0: 1, 1: 1}
+    values = {0: a, 1: b}
 
     def fib(m):
         if m in values:

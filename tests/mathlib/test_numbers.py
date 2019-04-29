@@ -43,3 +43,30 @@ def test_fibonacci_numbers(initial, count, expected):
     fibonacci = numbers.fibonacci_numbers(*initial)
     result = list(next(fibonacci) for _ in range(count))
     assert result == expected
+
+
+@pytest.mark.parametrize(
+    ["n", "k", "expected"],
+    [
+        [0, 0, 1],
+        [7, 0, 1],
+        [7, 1, 7],
+        [7, 2, 21],
+        [7, 3, 35],
+        [7, 4, 35],
+        [7, 5, 21],
+        [7, 6, 7],
+        [7, 7, 1],
+        [8, 0, 1],
+        [8, 1, 8],
+        [8, 2, 28],
+        [8, 3, 56],
+        [8, 4, 70],
+        [8, 5, 56],
+        [8, 6, 28],
+        [8, 7, 8],
+        [8, 8, 1],
+    ],
+)
+def test_binomial(n, k, expected):
+    assert numbers.binomial(n, k) == expected

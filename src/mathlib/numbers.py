@@ -69,3 +69,18 @@ def fibonacci_numbers(a: int = 0, b: int = 1) -> Iterator[int]:
     while True:
         yield a
         a, b = b, a + b
+
+
+def binomial(n: int, k: int) -> int:
+    """
+    Calculate n choose k.
+
+    Calculation is using the multiplicative formula, and is performed
+    from the side that will minimise the number of calculations.
+    """
+    output = 1
+    k = min(k, n - k)
+    for t in range(k):
+        output = (n - t) * output // (t + 1)
+
+    return output

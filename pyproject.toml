@@ -9,7 +9,7 @@ description = "A pure-python maths library"
 authors = ["spapanik <spapanik21@gmail.com>"]
 
 license = "LGPLv3"
-readme = "readme.md"
+readme = "README.md"
 
 repository = "https://github.com/spapanik/mathlib"
 

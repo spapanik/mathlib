@@ -2,11 +2,15 @@ language: python
 
 python:
   - "3.6"
+  - "3.7"
+  - "3.8"
 
 install:
-  - "pip install 'pip<19.1'"
   - "pip install poetry"
   - "make requirements.txt"
 
 script:
   - "make tests"
+
+after_success:
+  - coveralls

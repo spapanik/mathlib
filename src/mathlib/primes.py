@@ -28,9 +28,7 @@ def sieve(upper_bound: int) -> Iterator[int]:
         if indices[i]:
             slice_start = 2 * i * i + 6 * i + 3
             slice_step = 2 * i + 3
-            number_of_primes = math.ceil(
-                (upper_bound - slice_start) / slice_step
-            )
+            number_of_primes = math.ceil((upper_bound - slice_start) / slice_step)
             indices[slice_start::slice_step] = [False] * number_of_primes
 
     for i in range(upper_bound):

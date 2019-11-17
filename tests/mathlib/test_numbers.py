@@ -3,16 +3,12 @@ import pytest
 from mathlib import numbers
 
 
-@pytest.mark.parametrize(
-    ["a", "b", "expected"], [[1, 2, 2], [6, 4, 12], [6, 4, 12]]
-)
+@pytest.mark.parametrize(["a", "b", "expected"], [[1, 2, 2], [6, 4, 12], [6, 4, 12]])
 def test_lcm(a, b, expected):
     assert numbers.lcm(a, b) == expected
 
 
-@pytest.mark.parametrize(
-    ["a", "b"], [[7, 3], [872, 7959], [7959, 872], [42, 35129]]
-)
+@pytest.mark.parametrize(["a", "b"], [[7, 3], [872, 7959], [7959, 872], [42, 35129]])
 def test_modular_inverse(a, b):
     inverse = numbers.modular_inverse(a, b)
     assert 0 < inverse < b
@@ -21,15 +17,7 @@ def test_modular_inverse(a, b):
 
 @pytest.mark.parametrize(
     ["n", "expected"],
-    [
-        [0, 1],
-        [1, 1],
-        [2, 2],
-        [-11, 144],
-        [-10, -89],
-        [25, 121393],
-        [40, 165580141],
-    ],
+    [[0, 1], [1, 1], [2, 2], [-11, 144], [-10, -89], [25, 121393], [40, 165580141]],
 )
 def test_fibonacci(n, expected):
     assert numbers.fibonacci(n) == expected

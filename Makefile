@@ -1,5 +1,5 @@
-TEST_FLAGS = --cov
-TEST_PATH = src/
+TEST_FLAGS = --cov=src/
+TEST_PATH = tests/
 
 .PHONY: install
 install: poetry.lock

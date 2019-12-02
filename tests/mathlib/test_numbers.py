@@ -29,7 +29,7 @@ def test_fibonacci(n, expected):
 )
 def test_fibonacci_numbers(initial, count, expected):
     fibonacci = numbers.fibonacci_numbers(*initial)
-    result = list(next(fibonacci) for _ in range(count))
+    result = [next(fibonacci) for _ in range(count)]
     assert result == expected
 
 

@@ -14,6 +14,12 @@ format:
 tests:
 	py.test $(TEST_FLAGS) $(TEST_PATH)
 
+.PHONY: lint
+lint:
+	flake8 .
+	isort --check-only -rc .
+	black --check .
+
 poetry.lock: pyproject.toml
 	poetry lock
 

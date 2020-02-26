@@ -19,12 +19,34 @@ def test_sieve_two_arguments(upper_bound, prime_numbers):
     assert list(primes.sieve(upper_bound)) == prime_numbers
 
 
-@pytest.mark.parametrize("number", [2, 3, 5, 41, 97, 593441861])
+@pytest.mark.parametrize(
+    "number", [2, 3, 5, 41, 97, 1234577, 9000011, 21326017, 593441861]
+)
 def test_is_prime(number):
     assert primes.is_prime(number) is True
 
 
-@pytest.mark.parametrize("number", [1, 4, 6, 25, 3177070365797955661914307])
+@pytest.mark.parametrize(
+    "number",
+    [
+        1,
+        4,
+        6,
+        25,
+        2133,
+        1373889,
+        9080339,
+        25326215,
+        4759123293,
+        1122004669803,
+        2152302898947,
+        3474749660601,
+        341550071728525,
+        3825123056546413239,
+        318665857834031151167663,
+        3317044064679887385962127,
+    ],
+)
 def test_is_not_prime(number):
     assert primes.is_prime(number) is False
 

@@ -1,8 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog][clog], and this project adheres to [Semantic Versioning][semver].
 
 ## [Unreleased]
 
@@ -29,8 +28,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add a method to check whether a number is prime
 
+
 [unreleased]: https://github.com/spapanik/mathlib/compare/v0.1.3...master
 [0.1.3]: https://github.com/spapanik/mathlib/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/spapanik/mathlib/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/spapanik/mathlib/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/spapanik/mathlib/releases/tag/v0.1.0
+
+[clog]: https://keepachangelog.com/en/1.0.0/
+[semver]: https://semver.org/spec/v2.0.0.html

@@ -1,12 +1,16 @@
-# Compiled files
+# cache
 __pycache__/
-
-# tests
 .pytest_cache/
 
-# installation
+# tests
+.coverage
+htmlcov/
+
+# installation artifacts
+.yamk/
 requirements.txt
 
 # Distribution / packaging
 pip-wheel-metadata/
 dist/
+*.egg-info/

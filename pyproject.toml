@@ -17,7 +17,7 @@ name = "mathlib"
 version = "0.1.3"
 description = "A pure-python maths library"
 authors = [
-    "Stephanos Kuma <spapanik21@gmail.com>",
+    "Stephanos Kuma <stephanos@kuma.ai>",
 ]
 
 license = "LGPL-3.0+"

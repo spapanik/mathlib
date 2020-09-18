@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog][clog], and this project adheres to [Semantic Versioning][semver].
 
 ## [Unreleased]
+
+## [0.1.4] - 2020-09-18
 ### Added
 - Added more type hints
 
@@ -31,7 +33,8 @@ The format is based on [Keep a Changelog][clog], and this project adheres to [Se
 - Added a method to check whether a number is prime
 
 
-[unreleased]: https://github.com/spapanik/mathlib/compare/v0.1.3...master
+[unreleased]: https://github.com/spapanik/mathlib/compare/v0.1.4...master
+[0.1.4]: https://github.com/spapanik/mathlib/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/spapanik/mathlib/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/spapanik/mathlib/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/spapanik/mathlib/compare/v0.1.0...v0.1.1

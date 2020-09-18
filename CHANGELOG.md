@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog][clog], and this project adheres to [Semantic Versioning][semver].
 
 ## [Unreleased]
+### Added
+- Added more type hints
 
 ## [0.1.3] - 2019-04-30
 ### Added

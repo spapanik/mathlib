@@ -1,6 +1,6 @@
 import math
 from itertools import chain, count
-from typing import Iterator
+from typing import Iterable, Iterator
 
 
 def sieve(upper_bound: int) -> Iterator[int]:
@@ -36,7 +36,7 @@ def sieve(upper_bound: int) -> Iterator[int]:
             yield 2 * i + 3
 
 
-def _miller_rabin_loop(witness, mantissa, power, n):
+def _miller_rabin_loop(witness: int, mantissa: int, power: int, n: int) -> bool:
     if pow(witness, mantissa, n) == 1:
         return False
 
@@ -47,7 +47,7 @@ def _miller_rabin_loop(witness, mantissa, power, n):
     return True
 
 
-def _miller_rabin_witnesses(n):
+def _miller_rabin_witnesses(n: int) -> Iterable[int]:
     if n < 2047:
         return (2,)
 

@@ -42,7 +42,7 @@ def fibonacci(n: int, a: int = 1, b: int = 1) -> int:
     """
     values = {0: a, 1: b}
 
-    def fib(m):
+    def fib(m: int) -> int:
         if m in values:
             return values[m]
 
@@ -55,7 +55,9 @@ def fibonacci(n: int, a: int = 1, b: int = 1) -> int:
         return value
 
     if n < 0:
-        return ((-1) ** (1 - n)) * fib(-n)
+        if n % 2 == 0:
+            return -fib(-n)
+        return fib(-n)
     return fib(n)
 
 

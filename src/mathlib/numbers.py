@@ -86,3 +86,11 @@ def binomial(n: int, k: int) -> int:
         output = (n - t) * output // (t + 1)
 
     return output
+
+
+def polygonal_number(s: int, n: int) -> int:
+    """
+    Calculate the n-th s-gonal number.
+    """
+
+    return (s - 2) * n * (n - 1) // 2 + n

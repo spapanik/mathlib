@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog][clog], and this project adheres to [Se
 
 ## [Unreleased]
 
+### Added
+- Added a method to calculate polygonal numbers
+
 ## [0.1.4] - 2020-09-18
 ### Added
 - Added more type hints

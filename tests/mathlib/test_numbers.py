@@ -58,3 +58,16 @@ def test_fibonacci_numbers(initial, count, expected):
 )
 def test_binomial(n, k, expected):
     assert numbers.binomial(n, k) == expected
+
+
+@pytest.mark.parametrize(
+    ["s", "n", "expected"],
+    [
+        [3, 4, 10],
+        [4, 8, 64],
+        [5, 5, 35],
+        [6, 3, 15],
+    ]
+)
+def test_polygonal_number(s, n, expected):
+    assert numbers.polygonal_number(s, n) == expected

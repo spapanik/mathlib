@@ -3,9 +3,34 @@ import pytest
 from mathlib import numbers
 
 
-@pytest.mark.parametrize(["a", "b", "expected"], [[1, 2, 2], [6, 4, 12], [6, 4, 12]])
-def test_lcm(a, b, expected):
-    assert numbers.lcm(a, b) == expected
+@pytest.mark.parametrize(
+    ["integers", "expected"],
+    [
+        [[], 0],
+        [[45], 45],
+        [[0, 8], 8],
+        [[1, 2], 1],
+        [[6, 4], 2],
+        [[4, 2, 198, 6], 2],
+    ],
+)
+def test_gcd(integers, expected):
+    assert numbers.gcd(*integers) == expected
+
+
+@pytest.mark.parametrize(
+    ["integers", "expected"],
+    [
+        [[], 1],
+        [[45], 45],
+        [[0, 8], 0],
+        [[1, 2], 2],
+        [[6, 4], 12],
+        [[1, 2, 3, 4, 6], 12],
+    ],
+)
+def test_lcm(integers, expected):
+    assert numbers.lcm(*integers) == expected
 
 
 @pytest.mark.parametrize(["a", "b"], [[7, 3], [872, 7959], [7959, 872], [42, 35129]])
@@ -67,7 +92,7 @@ def test_binomial(n, k, expected):
         [4, 8, 64],
         [5, 5, 35],
         [6, 3, 15],
-    ]
+    ],
 )
 def test_polygonal_number(s, n, expected):
     assert numbers.polygonal_number(s, n) == expected

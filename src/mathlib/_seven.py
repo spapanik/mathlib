@@ -7,8 +7,10 @@ MINOR = sys.version_info.minor
 
 
 if MINOR >= 8:
+
     def modular_inverse(n: int, mod: int) -> int:
         return pow(n, -1, mod)
+
     prod = math.prod
 else:
 

@@ -12,6 +12,9 @@ include_trailing_comma = true
 known_tests = "tests"
 sections = ["STDLIB", "THIRDPARTY", "FIRSTPARTY", "TESTS"]
 
+[tool.coverage.run]
+omit = ["src/mathlib/_seven.py"]
+
 [tool.poetry]
 name = "mathlib"
 version = "0.1.4"

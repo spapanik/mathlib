@@ -5,8 +5,14 @@ The format is based on [Keep a Changelog][clog], and this project adheres to [Se
 
 ## [Unreleased]
 
+### Changed
+- Improved the lcm to take an arbitrary number of arguments
+- Improved the modular inverse to use the stdlib one
+
 ### Added
 - Added a method to calculate polygonal numbers
+- Added a method to calculate gcd
+- Added a method to calculate the product of an interable
 
 ## [0.1.4] - 2020-09-18
 ### Added

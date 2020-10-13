@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog][clog], and this project adheres to [Se
 
 ## [Unreleased]
 
+## [0.2.0] - 2020-10-13
 ### Changed
 - Improved the lcm to take an arbitrary number of arguments
 - Improved the modular inverse to use the stdlib one
@@ -42,7 +43,8 @@ The format is based on [Keep a Changelog][clog], and this project adheres to [Se
 - Added a method to check whether a number is prime
 
 
-[unreleased]: https://github.com/spapanik/mathlib/compare/v0.1.4...master
+[unreleased]: https://github.com/spapanik/mathlib/compare/v0.2.0...master
+[0.2.0]: https://github.com/spapanik/mathlib/compare/v0.1.4...v0.2.0
 [0.1.4]: https://github.com/spapanik/mathlib/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/spapanik/mathlib/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/spapanik/mathlib/compare/v0.1.1...v0.1.2

@@ -15,6 +15,9 @@ sections = ["STDLIB", "THIRDPARTY", "FIRSTPARTY", "TESTS"]
 [tool.coverage.run]
 omit = ["src/mathlib/_seven.py"]
 
+[tool.coverage.paths]
+source = ["src/"]
+
 [tool.poetry]
 name = "mathlib"
 version = "0.2.0"

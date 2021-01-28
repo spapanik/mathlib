@@ -13,10 +13,8 @@ known_tests = "tests"
 sections = ["STDLIB", "THIRDPARTY", "FIRSTPARTY", "TESTS"]
 
 [tool.coverage.run]
-omit = ["src/mathlib/_seven.py"]
-
-[tool.coverage.paths]
 source = ["src/"]
+omit = ["src/mathlib/_seven.py"]
 
 [tool.poetry]
 name = "mathlib"

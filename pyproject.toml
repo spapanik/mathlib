@@ -12,6 +12,10 @@ include_trailing_comma = true
 known_tests = "tests"
 sections = ["STDLIB", "THIRDPARTY", "FIRSTPARTY", "TESTS"]
 
+[tool.pytest.ini_options]
+addopts = "-vv"
+testpaths = "tests"
+
 [tool.poetry]
 name = "mathlib"
 version = "0.2.0"

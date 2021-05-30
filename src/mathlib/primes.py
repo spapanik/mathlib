@@ -3,6 +3,12 @@ from itertools import chain, count
 from typing import Iterable, Iterator
 
 
+class UnreachableError(Exception):
+    """
+    Make mypy happy; this part of the code is unreachable
+    """
+
+
 def sieve(upper_bound: int) -> Iterator[int]:
     """
     Make an iterator that returns the primes up to upper_bound
@@ -133,6 +139,8 @@ def next_prime(n: int) -> int:
         if is_prime(n):
             return n
 
+    raise UnreachableError("A prime will be reached")
+
 
 def primes() -> Iterator[int]:
     """
@@ -164,3 +172,5 @@ def divisor_sigma(n: int, x: int = 0) -> int:
                 out *= (prime_div ** (x * power) - 1) // (prime_div ** x - 1)
             if n == 1:
                 return out
+
+    raise UnreachableError("At some point divisors will be exhausted")

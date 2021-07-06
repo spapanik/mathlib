@@ -1,6 +1,5 @@
 <p align="center">
-<a href="https://travis-ci.org/spapanik/mathlib"><img alt="Build" src="https://travis-ci.org/spapanik/mathlib.svg?branch=master"></a>
-<a href="https://coveralls.io/github/spapanik/mathlib"><img alt="Coverage" src="https://coveralls.io/repos/github/spapanik/mathlib/badge.svg?branch=master"></a>
+<a href="https://github.com/spapanik/mathlib/actions/workflows/build.yml"><img alt="Build" src="https://github.com/spapanik/mathlib/actions/workflows/build.yml/badge.svg"></a>
 <a href="https://lgtm.com/projects/g/spapanik/mathlib/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/spapanik/mathlib.svg"/></a>
 <a href="https://github.com/spapanik/mathlib/blob/master/LICENSE.txt"><img alt="License" src="https://img.shields.io/github/license/spapanik/mathlib"></a>
 <a href="https://pypi.org/project/mathlib"><img alt="PyPI" src="https://img.shields.io/pypi/v/mathlib"></a>

@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog][clog], and this project adheres to [Se
 
 ## [Unreleased]
 
+### Added
+- Added python 3.10 support
+
 ## [0.2.0] - 2020-10-13
 ### Changed
 - Improved the lcm to take an arbitrary number of arguments

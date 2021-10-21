@@ -19,6 +19,7 @@ warn_return_any = true
 warn_redundant_casts = true
 warn_unused_ignores = true
 warn_unreachable = true
+exclude = "src/mathlib/_seven.py"
 
 [tool.pytest.ini_options]
 addopts = "-vv"

@@ -12,7 +12,23 @@ if MINOR >= 8:
         return pow(n, -1, mod)
 
     prod = math.prod
+    isqrt = math.isqrt
 else:
+
+    def _integer_sqrt(x: int, n: int) -> int:
+        return (x + n // x) >> 1
+
+    def isqrt(n: int) -> int:
+        if n < 0:
+            raise ValueError("isqrt() argument must be nonnegative")
+
+        if n == 0:
+            return 0
+
+        initial_guess, next_guess = n, _integer_sqrt(n, n)
+        while initial_guess > next_guess:
+            initial_guess, next_guess = next_guess, _integer_sqrt(next_guess, n)
+        return next_guess
 
     def prod(iterable, *, start=1):
         return reduce(operator.mul, iterable, start)

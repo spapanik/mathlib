@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog][clog], and this project adheres to [Se
 
 ### Added
 - Added python 3.10 support
+- Added a method to calculate the integer square root of a number
 
 ## [0.2.0] - 2020-10-13
 ### Changed

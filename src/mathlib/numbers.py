@@ -25,6 +25,11 @@ def lcm(*integers: int) -> int:
     return _seven.lcm(*integers)
 
 
+def isqrt(n: int) -> int:
+    """Find the largest integer whose square is less than n."""
+    return _seven.isqrt(n)
+
+
 def modular_inverse(n: int, mod: int) -> int:
     """
     Find the modular inverse of n modulo mod.

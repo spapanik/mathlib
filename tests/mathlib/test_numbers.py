@@ -5,14 +5,7 @@ from mathlib import numbers
 
 @pytest.mark.parametrize(
     ["integers", "expected"],
-    [
-        [[], 0],
-        [[45], 45],
-        [[0, 8], 8],
-        [[1, 2], 1],
-        [[6, 4], 2],
-        [[4, 2, 198, 6], 2],
-    ],
+    [[[], 0], [[45], 45], [[0, 8], 8], [[1, 2], 1], [[6, 4], 2], [[4, 2, 198, 6], 2]],
 )
 def test_gcd(integers, expected):
     assert numbers.gcd(*integers) == expected
@@ -86,13 +79,7 @@ def test_binomial(n, k, expected):
 
 
 @pytest.mark.parametrize(
-    ["s", "n", "expected"],
-    [
-        [3, 4, 10],
-        [4, 8, 64],
-        [5, 5, 35],
-        [6, 3, 15],
-    ],
+    ["s", "n", "expected"], [[3, 4, 10], [4, 8, 64], [5, 5, 35], [6, 3, 15]]
 )
 def test_polygonal_number(s, n, expected):
     assert numbers.polygonal_number(s, n) == expected

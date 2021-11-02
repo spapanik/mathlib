@@ -68,8 +68,7 @@ def test_primes():
 
 
 @pytest.mark.parametrize(
-    ["n", "divisors"],
-    [[10, [1, 2, 5, 10]], [12, [1, 2, 3, 4, 6, 12]], [13, [1, 13]]],
+    ["n", "divisors"], [[10, [1, 2, 5, 10]], [12, [1, 2, 3, 4, 6, 12]], [13, [1, 13]]]
 )
 def test_divisor_sigma(n, divisors):
     for x in range(5):

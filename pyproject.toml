@@ -58,6 +58,9 @@ mypy = "^0.920"
 
 pytest = "^6.2.0"
 
+sphinx = "^4.3.0"
+sphinx-rtd-theme = "^1.0.0"
+
 ipython = "^7.30.0"
 ipdb = "^0.13.0"
 

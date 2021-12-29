@@ -50,5 +50,5 @@ Links
 
 
 .. _poetry: https://python-poetry.org/
-.. _Changelog: https://github.com/spapanik/dj_settings/blob/main/CHANGELOG.rst
-.. _Documentation: https://dj-settings.readthedocs.io/en/latest/
+.. _Changelog: https://github.com/spapanik/mathlib/blob/main/CHANGELOG.rst
+.. _Documentation: https://mathlib.readthedocs.io/en/latest/

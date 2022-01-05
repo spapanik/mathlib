@@ -9,6 +9,9 @@ The format is based on `Keep a Changelog`_, and this project adheres to `Semanti
 `Unreleased`_
 -------------
 
+`0.3.0`_ - 2022-01-05
+---------------------
+
 Added
 ^^^^^
 * Added python310 support
@@ -75,7 +78,8 @@ Added
 * Added a method to check whether a number is prime
 
 
-.. _`unreleased`: https://github.com/spapanik/mathlib/compare/v0.2.0...master
+.. _`unreleased`: https://github.com/spapanik/mathlib/compare/v0.3.0...master
+.. _`0.3.0`: https://github.com/spapanik/mathlib/compare/v0.2.0...v0.3.0
 .. _`0.2.0`: https://github.com/spapanik/mathlib/compare/v0.1.4...v0.2.0
 .. _`0.1.4`: https://github.com/spapanik/mathlib/compare/v0.1.3...v0.1.4
 .. _`0.1.3`: https://github.com/spapanik/mathlib/compare/v0.1.2...v0.1.3

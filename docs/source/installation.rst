@@ -7,7 +7,7 @@ The easiest way is to use `poetry`_ to manage your dependencies and add *mathlib
 .. code-block:: toml
 
     [tool.poetry.dependencies]
-    mathlib = "^0.2.0"
+    mathlib = "^0.3.0"
 
 
 .. _poetry: https://python-poetry.org/

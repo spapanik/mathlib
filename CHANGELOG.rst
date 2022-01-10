@@ -9,6 +9,10 @@ The format is based on `Keep a Changelog`_, and this project adheres to `Semanti
 `Unreleased`_
 -------------
 
+Removed
+^^^^^^^
+* Removed changelog from the published wheel
+
 `0.3.0`_ - 2022-01-05
 ---------------------
 
@@ -33,7 +37,7 @@ Added
 ^^^^^
 * Added a method to calculate polygonal numbers
 * Added a method to calculate gcd
-* Added a method to calculate the product of an interable
+* Added a method to calculate the product of an iterable
 
 `0.1.4`_ - 2020-09-18
 ---------------------

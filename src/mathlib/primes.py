@@ -167,9 +167,9 @@ def divisor_sigma(n: int, x: int = 0) -> int:
             if x == 0:
                 out *= power
             elif x == 1:
-                out *= (prime_div ** power - 1) // (prime_div - 1)
+                out *= (prime_div**power - 1) // (prime_div - 1)
             else:
-                out *= (prime_div ** (x * power) - 1) // (prime_div ** x - 1)
+                out *= (prime_div ** (x * power) - 1) // (prime_div**x - 1)
             if n == 1:
                 return out
 

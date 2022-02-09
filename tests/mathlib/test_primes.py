@@ -72,5 +72,5 @@ def test_primes():
 )
 def test_divisor_sigma(n, divisors):
     for x in range(5):
-        expected = sum(map(lambda d: d ** x, divisors))
+        expected = sum(map(lambda d: d**x, divisors))
         assert primes.divisor_sigma(n, x) == expected

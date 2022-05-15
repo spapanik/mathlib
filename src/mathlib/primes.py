@@ -135,9 +135,9 @@ def next_prime(n: int) -> int:
     else:
         n += 1
 
-    for n in count(n, 2):
-        if is_prime(n):
-            return n
+    for p in count(n, 2):
+        if is_prime(p):
+            return p
 
     raise UnreachableError("A prime will be reached")
 

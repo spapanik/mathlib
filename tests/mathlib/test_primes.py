@@ -1,5 +1,3 @@
-from functools import partial
-
 import pytest
 
 from mathlib import primes
@@ -74,5 +72,5 @@ def test_primes():
 )
 def test_divisor_sigma(n, divisors):
     for x in range(5):
-        expected = sum(map(partial(pow, exp=x), divisors))
+        expected = sum(pow(divisor, x) for divisor in divisors)
         assert primes.divisor_sigma(n, x) == expected

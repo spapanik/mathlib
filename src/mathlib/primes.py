@@ -103,7 +103,7 @@ def is_prime(n: int) -> bool:
     that we need to check for all possible Miller-Rabin witnesses.
     """
     if n < 5:
-        return n in (2, 3)
+        return n in {2, 3}
 
     if n % 2 == 0:
         return False

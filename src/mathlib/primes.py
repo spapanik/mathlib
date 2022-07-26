@@ -55,7 +55,7 @@ def _miller_rabin_loop(witness: int, mantissa: int, power: int, n: int) -> bool:
 
 def _miller_rabin_witnesses(n: int) -> Iterable[int]:
     if n < 2047:
-        return 2,
+        return (2,)
 
     if n < 1373653:
         return 2, 3

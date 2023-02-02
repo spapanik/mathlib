@@ -5,9 +5,6 @@ mathlib: a pure python maths library
 .. image:: https://github.com/spapanik/mathlib/actions/workflows/build.yml/badge.svg
   :alt: Build
   :target: https://github.com/spapanik/mathlib/actions/workflows/build.yml
-.. image:: https://img.shields.io/lgtm/alerts/g/spapanik/mathlib.svg
-  :alt: Total alerts
-  :target: https://lgtm.com/projects/g/spapanik/mathlib/alerts/
 .. image:: https://img.shields.io/github/license/spapanik/mathlib
   :alt: License
   :target: https://github.com/spapanik/mathlib/blob/main/LICENSE.txt

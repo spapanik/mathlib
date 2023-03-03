@@ -46,11 +46,7 @@ def _miller_rabin_loop(witness: int, mantissa: int, power: int, n: int) -> bool:
     if pow(witness, mantissa, n) == 1:
         return False
 
-    for r in range(power):
-        if pow(witness, mantissa * (1 << r), n) + 1 == n:
-            return False
-
-    return True
+    return all(pow(witness, mantissa * (1 << r), n) + 1 != n for r in range(power))
 
 
 def _miller_rabin_witnesses(n: int) -> Iterable[int]:

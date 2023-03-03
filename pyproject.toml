@@ -5,11 +5,6 @@ build-backend = "poetry.core.masonry.api"
 [tool.black]
 target-version = ["py37", "py38", "py39", "py310", "py311"]
 
-[tool.isort]
-profile = "black"
-known_tests = "tests"
-sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "TESTS"]
-
 [tool.mypy]
 check_untyped_defs = true
 disallow_any_generics = true
@@ -23,24 +18,54 @@ warn_unreachable = true
 warn_unused_configs = true
 exclude = "src/mathlib/_seven.py"
 
-[tool.flake8]
-exclude = [
-    ".git",
-    "__pycache__",
-    ".venv",
-    ".cache",
+[tool.ruff]
+select = [
+    "A",
+    "ARG",
+    "B",
+    "BLE",
+    "C4",
+    "DTZ",
+    "E",
+    "ERA",
+    "EXE",
+    "F",
+    "FBT",
+    "G",
+    "I",
+    "INP",
+    "ISC",
+    "N",
+    "PGH",
+    "PIE",
+    "PLC",
+    "PLE",
+    "PLW",
+    "PTH",
+    "RET",
+    "RSE",
+    "RUF",
+    "SIM",
+    "SLF",
+    "T10",
+    "TID",
+    "TRY",
+    "UP",
+    "W",
 ]
-max-line-length = 88
 ignore = [
-    "E203",
     "E501",
-    "W503",
+    "TRY003",
 ]
-banned-modules = """
-    mock = use unittest.mock
-    pytz = use zoneinfo
-"""
-ban-relative-imports = true
+src = ["src"]
+target-version = "py37"
+
+[tool.ruff.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.flake8-tidy-imports.banned-api]
+"mock".msg = "Use unittest.mock"
+"pytz".msg = "Use zoneinfo"
 
 [tool.pytest.ini_options]
 addopts = "-vv --cov --cov-report=term-missing:skip-covered"
@@ -48,6 +73,7 @@ testpaths = "tests"
 
 [tool.coverage.run]
 source = ["src/"]
+data_file = ".cov_cache/coverage.dat"
 
 [tool.poetry]
 name = "mathlib"
@@ -76,28 +102,19 @@ classifiers = [
 python = "^3.7"
 
 [tool.poetry.group.dev.dependencies]
-ipdb = {version = "~0.13", python = "^3.10"}
-ipython = {version = "~8.9", python = "^3.10"}
+ipdb = {version = "^0.13", python = "^3.10"}
+ipython = {version = "^8.9", python = "^3.10"}
 pipdeptree = "^2.3"
 
 [tool.poetry.group.lint.dependencies]
 black = "^23.1"
-flake8 = "^5.0"
-flake8-bugbear = "^23.1"
-flake8-builtins = "^2.0"
-flake8-comprehensions = "^3.10"
-flake8-eradicate = "^1.4"
-flake8-executable = "^2.1"
-flake8-mutable = "^1.2"
-Flake8-pyproject = "~1.2"
-flake8-tidy-imports = "^4.8"
-isort = "^5.11"
-mypy = "^0.991"
+mypy = "^1.0"
+ruff = "^0.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.1"
-pytest-cov = "~4.0"
+pytest-cov = "^4.0"
 
 [tool.poetry.group.docs.dependencies]
-sphinx = {version = "^5.2", python = "^3.10"}
-sphinx-rtd-theme = {version = "^1.0", python = "^3.10"}
+sphinx = {version = "^6.1", python = "^3.10"}
+sphinx-rtd-theme = {version = "^1.2", python = "^3.10"}

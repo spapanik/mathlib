@@ -1,3 +1,4 @@
+import math
 from typing import Iterator
 
 from mathlib import _seven
@@ -27,7 +28,7 @@ def lcm(*integers: int) -> int:
 
 def isqrt(n: int) -> int:
     """Find the largest integer whose square is less than n."""
-    return _seven.isqrt(n)
+    return math.isqrt(n)
 
 
 def modular_inverse(n: int, mod: int) -> int:
@@ -40,7 +41,7 @@ def modular_inverse(n: int, mod: int) -> int:
 
     In later versions this is just a wrapper over the pow function.
     """
-    return _seven.modular_inverse(n, mod)
+    return pow(n, -1, mod)
 
 
 def fibonacci(n: int, a: int = 1, b: int = 1) -> int:

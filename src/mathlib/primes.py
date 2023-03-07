@@ -1,6 +1,6 @@
 import math
 from itertools import chain, count
-from typing import Iterable, Iterator
+from typing import Iterator
 
 
 class UnreachableError(Exception):
@@ -49,44 +49,58 @@ def _miller_rabin_loop(witness: int, mantissa: int, power: int, n: int) -> bool:
     return all(pow(witness, mantissa * (1 << r), n) + 1 != n for r in range(power))
 
 
-def _miller_rabin_witnesses(n: int) -> Iterable[int]:
+def _miller_rabin_witnesses(n: int) -> Iterator[int]:
     if n < 2047:
-        return (2,)
+        yield from [2]
+        return
 
     if n < 1373653:
-        return 2, 3
+        yield from [2, 3]
+        return
 
     if n < 9080191:
-        return 31, 73
+        yield from [31, 73]
+        return
 
     if n < 25326001:
-        return 2, 3, 5
+        yield from [2, 3, 5]
+        return
 
     if n < 4759123141:
-        return 2, 7, 61
+        yield from [2, 7, 61]
+        return
 
     if n < 1122004669633:
-        return 2, 13, 23, 1662803
+        yield from [2, 13, 23, 1662803]
+        return
 
     if n < 2152302898747:
-        return 2, 3, 5, 7, 11
+        yield from [2, 3, 5, 7, 11]
+        return
 
     if n < 3474749660383:
-        return 2, 3, 5, 7, 11, 13
+        yield from [2, 3, 5, 7, 11, 13]
+        return
 
     if n < 341550071728321:
-        return 2, 3, 5, 7, 11, 13, 17
+        yield from [2, 3, 5, 7, 11, 13, 17]
+        return
 
     if n < 3825123056546413051:
-        return 2, 3, 5, 7, 11, 13, 17, 19, 23
+        yield from [2, 3, 5, 7, 11, 13, 17, 19, 23]
+        return
 
     if n < 318665857834031151167461:
-        return 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37
+        yield from [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+        return
 
     if n < 3317044064679887385961981:
-        return 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41
+        yield from [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+        return
 
-    return range(2, math.floor(2 * (math.log(n) ** 2)) + 1)
+    yield 2
+    upper_bound = math.floor(2 * (math.log(n) ** 2)) + 1
+    yield from range(3, upper_bound, 2)
 
 
 def is_prime(n: int) -> bool:

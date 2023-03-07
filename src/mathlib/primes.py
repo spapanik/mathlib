@@ -98,9 +98,11 @@ def _miller_rabin_witnesses(n: int) -> Iterator[int]:
         yield from [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
         return
 
-    yield 2
     upper_bound = math.floor(2 * (math.log(n) ** 2)) + 1
-    yield from range(3, upper_bound, 2)
+    for prime in primes():
+        if prime > upper_bound:
+            return
+        yield prime
 
 
 def is_prime(n: int) -> bool:

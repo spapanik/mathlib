@@ -2,6 +2,63 @@ import math
 from itertools import chain, count
 from typing import Iterator
 
+SMALL_PRIMES = {
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53,
+    59,
+    61,
+    67,
+    71,
+    73,
+    79,
+    83,
+    89,
+    97,
+    101,
+    103,
+    107,
+    109,
+    113,
+    127,
+    131,
+    137,
+    139,
+    149,
+    151,
+    157,
+    163,
+    167,
+    173,
+    179,
+    181,
+    191,
+    193,
+    197,
+    199,
+    211,
+    223,
+    227,
+    229,
+    233,
+    239,
+    241,
+    251,
+}
+
 
 class UnreachableError(Exception):
     """
@@ -98,11 +155,7 @@ def _miller_rabin_witnesses(n: int) -> Iterator[int]:
         yield from [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
         return
 
-    upper_bound = math.floor(2 * (math.log(n) ** 2)) + 1
-    for prime in primes():
-        if prime > upper_bound:
-            return
-        yield prime
+    yield from sieve(math.floor(2 * (math.log(n) ** 2)) + 1)
 
 
 def is_prime(n: int) -> bool:
@@ -114,8 +167,8 @@ def is_prime(n: int) -> bool:
     integers, after which it is starts slowing down, due to the fact
     that we need to check for all possible Miller-Rabin witnesses.
     """
-    if n < 5:
-        return n in {2, 3}
+    if n < 256:
+        return n in SMALL_PRIMES
 
     if n % 2 == 0:
         return False

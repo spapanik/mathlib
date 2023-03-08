@@ -1,4 +1,4 @@
-name: build
+name: lint
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  lint:
 
     runs-on: ubuntu-latest
     strategy:

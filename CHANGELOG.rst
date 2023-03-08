@@ -9,6 +9,10 @@ The format is based on `Keep a Changelog`_, and this project adheres to `Semanti
 `Unreleased`_
 -------------
 
+Added
+^^^^^
+* Added method to return all the pythagorean triplets.
+
 Removed
 ^^^^^^^
 * Dropped python 3.7 support

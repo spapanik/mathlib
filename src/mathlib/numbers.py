@@ -104,3 +104,29 @@ def polygonal_number(s: int, n: int) -> int:
     """
 
     return (s - 2) * n * (n - 1) // 2 + n
+
+
+def pythagorean_triplets(
+    upper_bound: int, *, primitive_only: bool = False
+) -> Iterator[tuple[int, int, int]]:
+    """
+    Make an iterator that yields pythagorean triplets.
+
+    It yields all the pythagorean triplets, that the perimeter
+    of the triangle is less than `upper_bound`. Optionally,
+    only the primitive ones (ie, the lengths of the sides are
+    co-prime) are yielded.
+    """
+    m = 1
+    while 2 * m * (m - 1) <= upper_bound:
+        m += 1
+        max_n = min(upper_bound // (2 * m) - m + 1, m)
+        for n in range(1, max_n):
+            if (m + n) % 2 == 1 and gcd(m, n) == 1:
+                a, b, c = m**2 - n**2, 2 * m * n, m**2 + n**2
+                if primitive_only:
+                    yield a, b, c
+                else:
+                    limit = upper_bound // (2 * m * (m + n))
+                    for t in range(1, limit + 1):
+                        yield t * a, t * b, t * c

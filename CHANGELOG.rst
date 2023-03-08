@@ -11,7 +11,8 @@ The format is based on `Keep a Changelog`_, and this project adheres to `Semanti
 
 Added
 ^^^^^
-* Added method to return all the pythagorean triplets.
+* Added method to return all the pythagorean triplets
+* Added class with Collatz conjecture methods
 
 Removed
 ^^^^^^^

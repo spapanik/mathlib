@@ -4,15 +4,15 @@ from mathlib import primes
 
 
 @pytest.mark.parametrize(
-    ["upper_bound", "prime_numbers"],
+    ("upper_bound", "prime_numbers"),
     [
-        [2, []],
-        [3, [2]],
-        [4, [2, 3]],
-        [5, [2, 3]],
-        [6, [2, 3, 5]],
-        [11, [2, 3, 5, 7]],
-        [12, [2, 3, 5, 7, 11]],
+        (2, []),
+        (3, [2]),
+        (4, [2, 3]),
+        (5, [2, 3]),
+        (6, [2, 3, 5]),
+        (11, [2, 3, 5, 7]),
+        (12, [2, 3, 5, 7, 11]),
     ],
 )
 def test_sieve_two_arguments(upper_bound, prime_numbers):
@@ -52,7 +52,7 @@ def test_is_not_prime(number):
 
 
 @pytest.mark.parametrize(
-    ["number", "prime"], [[1, 2], [2, 3], [3, 5], [91, 97], [1000, 1009]]
+    ("number", "prime"), [(1, 2), (2, 3), (3, 5), (91, 97), (1000, 1009)]
 )
 def test_next_prime(number, prime):
     assert primes.next_prime(number) == prime
@@ -68,7 +68,7 @@ def test_primes():
 
 
 @pytest.mark.parametrize(
-    ["n", "divisors"], [[10, [1, 2, 5, 10]], [12, [1, 2, 3, 4, 6, 12]], [13, [1, 13]]]
+    ("n", "divisors"), [(10, [1, 2, 5, 10]), (12, [1, 2, 3, 4, 6, 12]), (13, [1, 13])]
 )
 def test_divisor_sigma(n, divisors):
     for x in range(5):

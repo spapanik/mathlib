@@ -37,7 +37,7 @@ The easiest way is to use `poetry`_ to manage your dependencies and add *mathlib
 .. code-block:: toml
 
     [tool.poetry.dependencies]
-    mathlib = "^0.4.0"
+    mathlib = "^0.5.0"
 
 Usage
 ^^^^^

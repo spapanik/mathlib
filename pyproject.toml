@@ -3,20 +3,28 @@ requires = ["poetry_core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-target-version = ["py38", "py39", "py310", "py311"]
+target-version = ["py38"]
 
 [tool.mypy]
+exclude = "src/mathlib/_seven.py"
+
 check_untyped_defs = true
 disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
 ignore_missing_imports = true
 no_implicit_reexport = true
 show_error_codes = true
+strict_concatenate = true
+strict_equality = true
 warn_return_any = true
 warn_redundant_casts = true
 warn_unused_ignores = true
 warn_unreachable = true
 warn_unused_configs = true
-exclude = "src/mathlib/_seven.py"
 
 [tool.ruff]
 select = [
@@ -63,7 +71,11 @@ src = ["src"]
 target-version = "py38"
 
 [tool.ruff.per-file-ignores]
-"tests/**" = ["S101"]
+"tests/**" = [
+    "FBT001",
+    "PT011",
+    "S101",
+]
 
 [tool.ruff.flake8-tidy-imports]
 ban-relative-imports = "all"
@@ -72,13 +84,23 @@ ban-relative-imports = "all"
 "mock".msg = "Use unittest.mock"
 "pytz".msg = "Use zoneinfo"
 
+[tool.ruff.isort]
+combine-as-imports = true
+forced-separate = ["tests"]
+split-on-trailing-comma = false
+
 [tool.pytest.ini_options]
-addopts = "-vv --cov --cov-report=term-missing:skip-covered"
+addopts = "-vv"
 testpaths = "tests"
 
 [tool.coverage.run]
 source = ["src/"]
 data_file = ".cov_cache/coverage.dat"
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+skip_empty = true
 
 [tool.poetry]
 name = "mathlib"
@@ -110,18 +132,18 @@ python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
 ipdb = {version = "^0.13", python = "^3.9"}
-ipython = {version = "^8.11", python = "^3.9"}
-pipdeptree = "^2.5"
+ipython = {version = "^8.12", python = "^3.9"}
+pipdeptree = "^2.7"
 
 [tool.poetry.group.lint.dependencies]
-black = "^23.1"
-mypy = "^1.0"
+black = "^23.3"
+mypy = "^1.2"
 ruff = "^0.0"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.1"
+pytest = "^7.3"
 pytest-cov = "^4.0"
 
 [tool.poetry.group.docs.dependencies]
-sphinx = "^6.1"
+sphinx = "^6.2"
 sphinx-rtd-theme = "^1.2"

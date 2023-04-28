@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 class Collatz:
     __slots__ = ["_upper_bound", "_steps"]
 

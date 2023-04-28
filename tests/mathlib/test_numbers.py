@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 
 from mathlib import numbers
@@ -7,7 +9,7 @@ from mathlib import numbers
     ("integers", "expected"),
     [([], 0), ([45], 45), ([0, 8], 8), ([1, 2], 1), ([6, 4], 2), ([4, 2, 198, 6], 2)],
 )
-def test_gcd(integers, expected):
+def test_gcd(integers: list[int], expected: int) -> None:
     assert numbers.gcd(*integers) == expected
 
 
@@ -22,12 +24,12 @@ def test_gcd(integers, expected):
         ([1, 2, 3, 4, 6], 12),
     ],
 )
-def test_lcm(integers, expected):
+def test_lcm(integers: list[int], expected: int) -> None:
     assert numbers.lcm(*integers) == expected
 
 
 @pytest.mark.parametrize(("a", "b"), [(7, 3), (872, 7959), (7959, 872), (42, 35129)])
-def test_modular_inverse(a, b):
+def test_modular_inverse(a: int, b: int) -> None:
     inverse = numbers.modular_inverse(a, b)
     assert 0 < inverse < b
     assert (a * inverse) % b == 1
@@ -37,7 +39,7 @@ def test_modular_inverse(a, b):
     ("n", "expected"),
     [(0, 1), (1, 1), (2, 2), (-11, 144), (-10, -89), (25, 121393), (40, 165580141)],
 )
-def test_fibonacci(n, expected):
+def test_fibonacci(n: int, expected: int) -> None:
     assert numbers.fibonacci(n) == expected
 
 
@@ -45,7 +47,7 @@ def test_fibonacci(n, expected):
     ("initial", "count", "expected"),
     [([0, 7], 4, [0, 7, 7, 14]), ([1, 1], 5, [1, 1, 2, 3, 5])],
 )
-def test_fibonacci_numbers(initial, count, expected):
+def test_fibonacci_numbers(initial: list[int], count: int, expected: list[int]) -> None:
     fibonacci = numbers.fibonacci_numbers(*initial)
     result = [next(fibonacci) for _ in range(count)]
     assert result == expected
@@ -74,12 +76,12 @@ def test_fibonacci_numbers(initial, count, expected):
         (8, 8, 1),
     ],
 )
-def test_binomial(n, k, expected):
+def test_binomial(n: int, k: int, expected: int) -> None:
     assert numbers.binomial(n, k) == expected
 
 
 @pytest.mark.parametrize(
     ("s", "n", "expected"), [(3, 4, 10), (4, 8, 64), (5, 5, 35), (6, 3, 15)]
 )
-def test_polygonal_number(s, n, expected):
+def test_polygonal_number(s: int, n: int, expected: int) -> None:
     assert numbers.polygonal_number(s, n) == expected

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 
 from mathlib import primes
@@ -15,14 +17,14 @@ from mathlib import primes
         (12, [2, 3, 5, 7, 11]),
     ],
 )
-def test_sieve_two_arguments(upper_bound, prime_numbers):
+def test_sieve_two_arguments(upper_bound: int, prime_numbers: list[int]) -> None:
     assert list(primes.sieve(upper_bound)) == prime_numbers
 
 
 @pytest.mark.parametrize(
     "number", [2, 3, 5, 41, 97, 1234577, 9000011, 21326017, 593441861]
 )
-def test_is_prime(number):
+def test_is_prime(number: int) -> None:
     assert primes.is_prime(number) is True
 
 
@@ -47,18 +49,18 @@ def test_is_prime(number):
         3317044064679887385962127,
     ],
 )
-def test_is_not_prime(number):
+def test_is_not_prime(number: int) -> None:
     assert primes.is_prime(number) is False
 
 
 @pytest.mark.parametrize(
     ("number", "prime"), [(1, 2), (2, 3), (3, 5), (91, 97), (1000, 1009)]
 )
-def test_next_prime(number, prime):
+def test_next_prime(number: int, prime: int) -> None:
     assert primes.next_prime(number) == prime
 
 
-def test_primes():
+def test_primes() -> None:
     prime_numbers = []
     for prime in primes.primes():
         if prime > 30:
@@ -70,7 +72,7 @@ def test_primes():
 @pytest.mark.parametrize(
     ("n", "divisors"), [(10, [1, 2, 5, 10]), (12, [1, 2, 3, 4, 6, 12]), (13, [1, 13])]
 )
-def test_divisor_sigma(n, divisors):
+def test_divisor_sigma(n: int, divisors: list[int]) -> None:
     for x in range(5):
         expected = sum(pow(divisor, x) for divisor in divisors)
         assert primes.divisor_sigma(n, x) == expected

@@ -1,6 +1,6 @@
 ["$globals"]
 shell = "bash"
-version = "5.1.0"
+version = "5.2"
 
 ["$globals".vars]
 poetry_sync = "--sync"
@@ -43,7 +43,7 @@ requires = [
     "install",
 ]
 commands = [
-    "pytest ${pytest_args} ${pytest_path}",
+    "pytest ${pytest_args} ${pytest_path} ${.extra}",
 ]
 
 ["docs/source"]
@@ -66,7 +66,8 @@ commands = [
 [clean-docs]
 phony = true
 commands = [
-    "rm -r docs/build/",
+    "rm -rf docs/build/",
+    "rm -f .yamk/documentation",
 ]
 
 ["poetry.lock"]

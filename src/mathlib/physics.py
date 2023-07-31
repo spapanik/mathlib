@@ -8,7 +8,7 @@ class Constant:
     name: str = field(repr=False)
     relative_uncertainty: float = field(repr=False)
 
-    def __float__(self):
+    def __float__(self) -> float:
         return self.value
 
 

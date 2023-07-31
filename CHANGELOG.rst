@@ -9,6 +9,10 @@ The format is based on `Keep a Changelog`_, and this project adheres to `Semanti
 `Unreleased`_
 -------------
 
+Added
+^^^^^
+* Added some physical constants
+
 `0.5.0`_ - 2023-04-28
 ---------------------
 

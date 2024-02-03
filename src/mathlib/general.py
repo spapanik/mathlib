@@ -12,7 +12,8 @@ class Collatz:
 
     def __getitem__(self, item: int) -> int:
         if item <= 0:
-            raise ValueError("item must be a positive integer")
+            msg = "item must be a positive integer"
+            raise ValueError(msg)
 
         if self._steps.get(item) is None:
             self._update_value(item)

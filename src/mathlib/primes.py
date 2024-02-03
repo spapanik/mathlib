@@ -204,7 +204,8 @@ def next_prime(n: int) -> int:
         if is_prime(p):
             return p
 
-    raise UnreachableError("A prime will be reached")
+    msg = "A prime will be reached"
+    raise UnreachableError(msg)
 
 
 def primes() -> Iterator[int]:
@@ -238,4 +239,5 @@ def divisor_sigma(n: int, x: int = 0) -> int:
             if n == 1:
                 return out
 
-    raise UnreachableError("At some point divisors will be exhausted")
+    msg = "At some point divisors will be exhausted"
+    raise UnreachableError(msg)

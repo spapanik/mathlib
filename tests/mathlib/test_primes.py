@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Iterable
+
 import pytest
 
 from mathlib import primes
@@ -76,3 +78,18 @@ def test_divisor_sigma(n: int, divisors: list[int]) -> None:
     for x in range(5):
         expected = sum(pow(divisor, x) for divisor in divisors)
         assert primes.divisor_sigma(n, x) == expected
+
+
+@pytest.mark.parametrize(
+    ("n", "known_primes", "factors"),
+    [
+        (10, (2, 3), {2: 1, 5: 1}),
+        (12386754, (2,), {2: 1, 3: 2, 83: 1, 8291: 1}),
+        (370332963, (2, 3, 5), {3: 2, 7: 1, 11: 2, 13: 1, 37: 1, 101: 1}),
+    ],
+)
+def test_factorise(
+    n: int, known_primes: Iterable[int], factors: dict[int, int]
+) -> None:
+    assert primes.factorise(n) == factors
+    assert primes.factorise(n, known_primes) == factors

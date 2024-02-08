@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import math
 from itertools import chain, count
-from typing import Iterator
+from typing import Iterable, Iterator
 
 SMALL_PRIMES = {
     2,
@@ -241,3 +243,26 @@ def divisor_sigma(n: int, x: int = 0) -> int:
 
     msg = "At some point divisors will be exhausted"
     raise UnreachableError(msg)
+
+
+def factorise(n: int, known_primes: Iterable[int] = ()) -> dict[int, int]:
+    if not known_primes:
+        known_primes = primes()
+
+    factors = {}
+    for prime in known_primes:
+        factor = 0
+        while n % prime == 0:
+            factor += 1
+            n //= prime
+        if factor:
+            factors[prime] = factor
+        if n == 1:
+            break
+
+    if n != 1:
+        missing_factors = factorise(n)
+        for factor in factors | missing_factors:
+            factors[factor] = factors.get(factor, 0) + missing_factors.get(factor, 0)
+
+    return factors

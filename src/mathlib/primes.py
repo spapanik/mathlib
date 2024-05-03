@@ -262,7 +262,7 @@ def factorise(n: int, known_primes: Iterable[int] = ()) -> dict[int, int]:
 
     if n != 1:
         missing_factors = factorise(n)
-        for factor in factors | missing_factors:
+        for factor in factors.keys() | missing_factors.keys():
             factors[factor] = factors.get(factor, 0) + missing_factors.get(factor, 0)
 
     return factors

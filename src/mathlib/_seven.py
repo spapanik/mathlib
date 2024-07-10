@@ -18,7 +18,7 @@ else:
         return reduce(math.gcd, integers, 0)
 
     def lcm(*integers: int) -> int:
-        def _lcm(a, b):
+        def _lcm(a: int, b: int) -> int:
             return a * b // gcd(a, b)
 
         return reduce(_lcm, integers, 1)

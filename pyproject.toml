@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 target-version = [
-    "py38",
+    "py39",
 ]
 
 [tool.mypy]
@@ -34,7 +34,7 @@ warn_unused_configs = true
 src = [
     "src",
 ]
-target-version = "py38"
+target-version = "py39"
 
 [tool.ruff.lint]
 select = [
@@ -154,12 +154,11 @@ classifiers = [
 
 [tool.poetry.dependencies]
 # python version
-python = "^3.8"
+python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
 ipdb = { version = "^0.13", python = "^3.10" }
 ipython = { version = "^8.21", python = "^3.10" }
-pickleshare = { version = "^0.7", python = "^3.10" }
 pipdeptree = "^2.13"
 
 [tool.poetry.group.lint.dependencies]

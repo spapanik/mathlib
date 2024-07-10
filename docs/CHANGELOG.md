@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog], and this project adheres to [Semantic
 
 -   Added some physical constants
 
+### Removed
+
+-   Dropped python 3.8 support
+
 ## [0.5.0] - 2023-04-28
 
 ### Added

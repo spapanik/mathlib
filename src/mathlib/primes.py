@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import math
+from collections.abc import Iterable, Iterator
 from itertools import chain, count
-from typing import Iterable, Iterator
 
 SMALL_PRIMES = {
     2,

@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import math
-from collections.abc import Iterator
+from typing import TYPE_CHECKING
 
 from mathlib import _seven
+
+if TYPE_CHECKING:
+    from collections.abc import Iterator
 
 
 def gcd(*integers: int) -> int:

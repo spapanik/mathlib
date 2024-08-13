@@ -14,6 +14,10 @@ The format is based on [Keep a Changelog], and this project adheres to [Semantic
 
 -   Dropped python 3.8 support
 
+### Changed
+
+-   Changed license to BSD 3-Clause
+
 ## [0.5.0] - 2023-04-28
 
 ### Added

@@ -18,7 +18,7 @@ used when there is no other option.
 
 [test_badge]: https://github.com/spapanik/mathlib/actions/workflows/tests.yml/badge.svg
 [test_url]: https://github.com/spapanik/mathlib/actions/workflows/tests.yml
-[licence_badge]: https://img.shields.io/badge/License-LGPL_v3-blue.svg
+[licence_badge]:https://img.shields.io/pypi/l/mathlib
 [licence_url]: https://github.com/spapanik/mathlib/blob/main/docs/LICENSE.md
 [pypi_badge]: https://img.shields.io/pypi/v/mathlib
 [pypi_url]: https://pypi.org/project/mathlib

@@ -3,8 +3,6 @@ from __future__ import annotations
 import math
 from typing import TYPE_CHECKING
 
-from mathlib import _seven
-
 if TYPE_CHECKING:
     from collections.abc import Iterator
 
@@ -17,7 +15,7 @@ def gcd(*integers: int) -> int:
     coincides with gcd to be the greatest lower bound in the
     lattice of divisibility.
     """
-    return _seven.gcd(*integers)
+    return math.gcd(*integers)
 
 
 def lcm(*integers: int) -> int:
@@ -28,7 +26,7 @@ def lcm(*integers: int) -> int:
     coincides with lcm to be the least upper bound in the
     lattice of divisibility.
     """
-    return _seven.lcm(*integers)
+    return math.lcm(*integers)
 
 
 def isqrt(n: int) -> int:
@@ -39,12 +37,6 @@ def isqrt(n: int) -> int:
 def modular_inverse(n: int, mod: int) -> int:
     """
     Find the modular inverse of n modulo mod.
-
-    In python 3.6 and 3.7, the algorithm is based on using
-    the Extended Euclid Algorithm, to solve the diophantine
-    equation n*x + mod*y = 1.
-
-    In later versions this is just a wrapper over the pow function.
     """
     return pow(n, -1, mod)
 

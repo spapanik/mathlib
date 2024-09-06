@@ -78,11 +78,11 @@ def sieve(upper_bound: int) -> Iterator[int]:
     This method uses the sieve of Eratosthenes to return the
     primes.
     """
-    if upper_bound <= 5:
-        if upper_bound > 2:
+    if upper_bound <= 5:  # noqa: PLR2004
+        if upper_bound > 2:  # noqa: PLR2004
             yield 2
 
-        if upper_bound > 3:
+        if upper_bound > 3:  # noqa: PLR2004
             yield 3
 
         return
@@ -112,51 +112,51 @@ def _miller_rabin_loop(witness: int, mantissa: int, power: int, n: int) -> bool:
 
 
 def _miller_rabin_witnesses(n: int) -> Iterator[int]:
-    if n < 2047:
+    if n < 2047:  # noqa: PLR2004
         yield from [2]
         return
 
-    if n < 1373653:
+    if n < 1373653:  # noqa: PLR2004
         yield from [2, 3]
         return
 
-    if n < 9080191:
+    if n < 9080191:  # noqa: PLR2004
         yield from [31, 73]
         return
 
-    if n < 25326001:
+    if n < 25326001:  # noqa: PLR2004
         yield from [2, 3, 5]
         return
 
-    if n < 4759123141:
+    if n < 4759123141:  # noqa: PLR2004
         yield from [2, 7, 61]
         return
 
-    if n < 1122004669633:
+    if n < 1122004669633:  # noqa: PLR2004
         yield from [2, 13, 23, 1662803]
         return
 
-    if n < 2152302898747:
+    if n < 2152302898747:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11]
         return
 
-    if n < 3474749660383:
+    if n < 3474749660383:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13]
         return
 
-    if n < 341550071728321:
+    if n < 341550071728321:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13, 17]
         return
 
-    if n < 3825123056546413051:
+    if n < 3825123056546413051:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13, 17, 19, 23]
         return
 
-    if n < 318665857834031151167461:
+    if n < 318665857834031151167461:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
         return
 
-    if n < 3317044064679887385961981:
+    if n < 3317044064679887385961981:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
         return
 
@@ -172,7 +172,7 @@ def is_prime(n: int) -> bool:
     integers, after which it is starts slowing down, due to the fact
     that we need to check for all possible Miller-Rabin witnesses.
     """
-    if n < 256:
+    if n < 256:  # noqa: PLR2004
         return n in SMALL_PRIMES
 
     if n % 2 == 0:
@@ -194,10 +194,10 @@ def next_prime(n: int) -> int:
     """
     Get the smallest prime that is larger than n.
     """
-    if n < 2:
+    if n < 2:  # noqa: PLR2004
         return 2
 
-    if n == 2:
+    if n == 2:  # noqa: PLR2004
         return 3
 
     if n & 1 == 1:

@@ -22,7 +22,8 @@ keywords = [
 classifiers = [
     "Development Status :: 4 - Beta",
     "Operating System :: OS Independent",
-    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: BSD License",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Mathematics",
 ]
@@ -40,9 +41,9 @@ dev = [
     "ipython~=8.18",
 ]
 lint = [
-    "black~=24.8",
-    "mypy~=1.11",
-    "ruff~=0.6",
+    "black~=24.10",
+    "mypy~=1.12",
+    "ruff~=0.7",
 ]
 test = [
     "pytest~=8.3",
@@ -52,8 +53,8 @@ docs = [
     "mkdocs~=1.6",
     "mkdocs-material~=9.5",
     "mkdocs-material-extensions~=1.3",
-    "pygments~=2.17",
-    "pymdown-extensions~=10.9",
+    "pygments~=2.18",
+    "pymdown-extensions~=10.11",
 ]
 
 [tool.black]
@@ -119,9 +120,7 @@ select = [
     "PGH",
     "PERF",
     "PIE",
-    "PLC",
-    "PLE",
-    "PLW",
+    "PL",
     "PT",
     "PTH",
     "PYI",
@@ -149,6 +148,7 @@ ignore = [
     "COM812",
     "E501",
     "FIX002",
+    "PLR09",
     "TD002",
     "TD003",
     "TRY003",
@@ -157,6 +157,7 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = [
     "FBT001",
+    "PLR2004",
     "PT011",
     "S101",
 ]
@@ -176,16 +177,20 @@ forced-separate = [
 split-on-trailing-comma = false
 
 [tool.pytest.ini_options]
-addopts = "-vv"
+addopts = "-ra -v --cov"
 testpaths = "tests"
 
 [tool.coverage.run]
+branch = true
 source = [
     "src/",
 ]
 data_file = ".cov_cache/coverage.dat"
 
 [tool.coverage.report]
+exclude_also = [
+    "if TYPE_CHECKING:",
+]
 show_missing = true
 skip_covered = true
 skip_empty = true

@@ -14,7 +14,7 @@ authors = [
 license = { text = "BSD-3-Clause" }
 
 readme = "docs/README.md"
-description = "url manipulation"
+description = "pure python mathematics library"
 keywords = [
     "mathematics",
     "maths",

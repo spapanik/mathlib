@@ -2,7 +2,7 @@
 
 # Using uv
 
-[pip] is an extremely fast Python package installer.
+[uv] is an extremely fast Python package installer.
 You can use it to install `mathlib` and try it out:
 
 ```console

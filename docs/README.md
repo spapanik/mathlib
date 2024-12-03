@@ -25,7 +25,7 @@ used when there is no other option.
 [test_badge]: https://github.com/spapanik/mathlib/actions/workflows/tests.yml/badge.svg
 [test_url]: https://github.com/spapanik/mathlib/actions/workflows/tests.yml
 [licence_badge]: https://img.shields.io/pypi/l/mathlib
-[licence_url]: https://github.com/spapanik/mathlib/blob/main/docs/LICENSE.md
+[licence_url]: https://mathlib.readthedocs.io/en/stable/LICENSE/
 [pypi_badge]: https://img.shields.io/pypi/v/mathlib
 [pypi_url]: https://pypi.org/project/mathlib
 [pepy_badge]: https://pepy.tech/badge/mathlib
@@ -37,4 +37,4 @@ used when there is no other option.
 [ruff_badge]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json
 [ruff_url]: https://github.com/charliermarsh/ruff
 [Documentation]: https://mathlib.readthedocs.io/en/stable/
-[Changelog]: https://github.com/spapanik/mathlib/blob/main/docs/CHANGELOG.md
+[Changelog]: https://mathlib.readthedocs.io/en/stable/CHANGELOG/

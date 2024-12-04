@@ -1,15 +1,27 @@
 from __future__ import annotations
 
 import math
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, TypeVar, Union, cast
 
 if TYPE_CHECKING:
     from collections.abc import Iterator
 
+T = TypeVar("T", bound=Union[int, float])
+
+
+def typed_pow(base: T, exponent: int) -> T:
+    """Return the value of base raised to the power of exponent.
+
+    Works for both integers and floats.
+    """
+    if exponent < 0:
+        msg = "Exponent must be non-negative"
+        raise ValueError(msg)
+    return cast(T, base**exponent)
+
 
 def gcd(*integers: int) -> int:
-    """
-    Find the greatest common divisor of the arguments.
+    """Find the greatest common divisor of the arguments.
 
     The greatest common divisor of a and 0 is always a, as this
     coincides with gcd to be the greatest lower bound in the
@@ -19,8 +31,7 @@ def gcd(*integers: int) -> int:
 
 
 def lcm(*integers: int) -> int:
-    """
-    Find the least common multiple of the arguments.
+    """Find the least common multiple of the arguments.
 
     The least common multiple of a and 0 is always 0, as this
     coincides with lcm to be the least upper bound in the
@@ -35,15 +46,12 @@ def isqrt(n: int) -> int:
 
 
 def modular_inverse(n: int, mod: int) -> int:
-    """
-    Find the modular inverse of n modulo mod.
-    """
+    """Find the modular inverse of n modulo mod."""
     return pow(n, -1, mod)
 
 
 def fibonacci(n: int, a: int = 1, b: int = 1) -> int:
-    """
-    Return the nth Fibonacci number.
+    """Return the nth Fibonacci number.
 
     n can be a negative integer as well.
     """
@@ -69,8 +77,7 @@ def fibonacci(n: int, a: int = 1, b: int = 1) -> int:
 
 
 def fibonacci_numbers(a: int = 0, b: int = 1) -> Iterator[int]:
-    """
-    Make an iterator that returns the Fibonacci numbers.
+    """Make an iterator that returns the Fibonacci numbers.
 
     The Fibonacci sequence is configurable, in the sense that the two
     initial values of it can be passed as arguments.
@@ -81,8 +88,7 @@ def fibonacci_numbers(a: int = 0, b: int = 1) -> Iterator[int]:
 
 
 def binomial(n: int, k: int) -> int:
-    """
-    Calculate n choose k.
+    """Calculate n choose k.
 
     Calculation is using the multiplicative formula, and is performed
     from the side that will minimise the number of calculations.
@@ -96,18 +102,14 @@ def binomial(n: int, k: int) -> int:
 
 
 def polygonal_number(s: int, n: int) -> int:
-    """
-    Calculate the n-th s-gonal number.
-    """
-
+    """Calculate the n-th s-gonal number."""
     return (s - 2) * n * (n - 1) // 2 + n
 
 
 def pythagorean_triplets(
     upper_bound: int, *, primitive_only: bool = False
 ) -> Iterator[tuple[int, int, int]]:
-    """
-    Make an iterator that yields pythagorean triplets.
+    """Make an iterator that yields pythagorean triplets.
 
     It yields all the pythagorean triplets, that the perimeter
     of the triangle is less than `upper_bound`. Optionally,

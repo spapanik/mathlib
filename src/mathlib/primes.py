@@ -4,6 +4,8 @@ import math
 from itertools import chain, count
 from typing import TYPE_CHECKING
 
+from mathlib.numbers import typed_pow
+
 if TYPE_CHECKING:
     from collections.abc import Iterable, Iterator
 
@@ -66,14 +68,11 @@ SMALL_PRIMES = {
 
 
 class UnreachableError(Exception):
-    """
-    Make mypy happy; this part of the code is unreachable
-    """
+    """Make mypy happy; this part of the code is unreachable."""
 
 
 def sieve(upper_bound: int) -> Iterator[int]:
-    """
-    Make an iterator that returns the primes up to upper_bound
+    """Make an iterator that returns the primes up to upper_bound.
 
     This method uses the sieve of Eratosthenes to return the
     primes.
@@ -164,8 +163,7 @@ def _miller_rabin_witnesses(n: int) -> Iterator[int]:
 
 
 def is_prime(n: int) -> bool:
-    """
-    Check if n is a prime number.
+    """Check if n is a prime number.
 
     This is a deterministic primality test, but it relies on GHR. This
     seems a good enough compromise. It is very fast for up to 81-bit
@@ -191,9 +189,7 @@ def is_prime(n: int) -> bool:
 
 
 def next_prime(n: int) -> int:
-    """
-    Get the smallest prime that is larger than n.
-    """
+    """Get the smallest prime that is larger than n."""
     if n < 2:  # noqa: PLR2004
         return 2
 
@@ -214,9 +210,7 @@ def next_prime(n: int) -> int:
 
 
 def primes() -> Iterator[int]:
-    """
-    Make an iterator that returns the prime numbers in ascending order.
-    """
+    """Make an iterator that returns the prime numbers in ascending order."""
     yield 2
 
     for n in count(3, 2):
@@ -225,9 +219,7 @@ def primes() -> Iterator[int]:
 
 
 def divisor_sigma(n: int, x: int = 0) -> int:
-    """
-    Calculate the sum of the xth powers of the positive divisors of n
-    """
+    """Calculate the sum of the xth powers of the positive divisors of n."""
     out = 1
     for prime_div in chain([2], count(3, 2)):
         power = 1
@@ -238,9 +230,10 @@ def divisor_sigma(n: int, x: int = 0) -> int:
             if x == 0:
                 out *= power
             elif x == 1:
-                out *= (prime_div**power - 1) // (prime_div - 1)
+                out *= (typed_pow(prime_div, power) - 1) // (prime_div - 1)
             else:
-                out *= (prime_div ** (x * power) - 1) // (prime_div**x - 1)
+                prime_div_pow = typed_pow(prime_div, x)
+                out *= (typed_pow(prime_div_pow, power) - 1) // (prime_div_pow - 1)
             if n == 1:
                 return out
 

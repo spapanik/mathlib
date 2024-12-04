@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 import pytest
 
 from mathlib import primes
+from mathlib.numbers import typed_pow
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
@@ -79,7 +80,7 @@ def test_primes() -> None:
 )
 def test_divisor_sigma(n: int, divisors: list[int]) -> None:
     for x in range(5):
-        expected = sum(pow(divisor, x) for divisor in divisors)
+        expected = sum(typed_pow(divisor, x) for divisor in divisors)
         assert primes.divisor_sigma(n, x) == expected
 
 

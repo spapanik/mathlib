@@ -4,6 +4,7 @@ import math
 from itertools import chain, count
 from typing import TYPE_CHECKING
 
+from mathlib.lib.exceptions import UnreachableCodeError
 from mathlib.numbers import typed_pow
 
 if TYPE_CHECKING:
@@ -65,10 +66,6 @@ SMALL_PRIMES = {
     241,
     251,
 }
-
-
-class UnreachableError(Exception):
-    """Make mypy happy; this part of the code is unreachable."""
 
 
 def sieve(upper_bound: int) -> Iterator[int]:
@@ -205,8 +202,8 @@ def next_prime(n: int) -> int:
         if is_prime(p):
             return p
 
-    msg = "A prime will be reached"
-    raise UnreachableError(msg)
+    # A prime will be reached at some point
+    raise UnreachableCodeError
 
 
 def primes() -> Iterator[int]:
@@ -237,8 +234,8 @@ def divisor_sigma(n: int, x: int = 0) -> int:
             if n == 1:
                 return out
 
-    msg = "At some point divisors will be exhausted"
-    raise UnreachableError(msg)
+    # At some point divisors will be exhausted
+    raise UnreachableCodeError
 
 
 def factorise(n: int, known_primes: Iterable[int] = ()) -> dict[int, int]:

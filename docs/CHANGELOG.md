@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog], and this project adheres to [Semantic
 
 ## [Unreleased]
 
+## [0.6.0] - 2024-12-18
+
 ### Added
 
 -   Added some physical constants
@@ -100,7 +102,8 @@ The format is based on [Keep a Changelog], and this project adheres to [Semantic
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
-[Unreleased]: https://github.com/spapanik/mathlib/compare/v0.5.0...master
+[Unreleased]: https://github.com/spapanik/mathlib/compare/v0.6.0...master
+[0.6.0]: https://github.com/spapanik/mathlib/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/spapanik/mathlib/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/spapanik/mathlib/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/spapanik/mathlib/compare/v0.2.0...v0.3.0

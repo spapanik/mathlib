@@ -6,7 +6,7 @@ build-backend = "phosphorus.construction.api"
 
 [project]
 name = "mathlib"
-version = "0.5.0"
+version = "0.6.0"
 
 authors = [
     { name = "Stephanos Kuma", email = "stephanos@kuma.ai" },

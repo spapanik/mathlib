@@ -147,6 +147,7 @@ data_file = ".cov_cache/coverage.dat"
 [tool.coverage.report]
 exclude_also = [
     "if TYPE_CHECKING:",
+    "raise NotImplementedError",
 ]
 fail_under = 75
 precision = 2

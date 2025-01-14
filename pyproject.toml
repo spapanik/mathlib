@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-    "phosphorus>=0.8",
+    "phosphorus>=0.9",
 ]
 build-backend = "phosphorus.construction.api"
 
@@ -35,7 +35,7 @@ homepage = "https://mathlib.readthedocs.io/en/stable/"
 repository = "https://github.com/spapanik/mathlib"
 documentation = "https://mathlib.readthedocs.io/en/stable/"
 
-[tool.phosphorus.dev-dependencies]
+[dependency-groups]
 dev = [
     "ipdb~=0.13",
     "ipython~=8.18",
@@ -143,6 +143,9 @@ source = [
     "src/",
 ]
 data_file = ".cov_cache/coverage.dat"
+omit = [
+    "src/mathlib/lib/type_defs.py",
+]
 
 [tool.coverage.report]
 exclude_also = [

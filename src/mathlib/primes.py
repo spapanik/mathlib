@@ -178,11 +178,10 @@ def is_prime(n: int) -> bool:
         mantissa >>= 1
         power += 1
 
-    for witness in _miller_rabin_witnesses(n):
-        if _miller_rabin_loop(witness, mantissa, power, n):
-            return False
-
-    return True
+    return not any(
+        _miller_rabin_loop(witness, mantissa, power, n)
+        for witness in _miller_rabin_witnesses(n)
+    )
 
 
 def next_prime(n: int) -> int:

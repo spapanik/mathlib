@@ -17,17 +17,15 @@ You can add `mathlib` to your `pyproject.toml` file:
 ```toml
 [project]
 dependencies = [
-    "mathlib~=0.5",
+    "mathlib~=0.6",
     ....
 ]
 ```
 
 ## Python Version Requirement
 
-Please note that `mathlib` requires Python 3.9 or higher. Please ensure
-that you have such a version installed in your system. If not,
-consider using a tool like [pyenv] to create a shell with the required Python version.
+Please note that `mathlib` requires Python 3.9 or higher. If you're not using uv,
+please ensure that you have such a version installed in your system.
 
 [uv]: https://github.com/astral-sh/uv
 [PEP 621]: https://peps.python.org/pep-0621/
-[pyenv]: https://github.com/pyenv/pyenv

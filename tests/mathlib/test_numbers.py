@@ -1,8 +1,24 @@
 from __future__ import annotations
 
+from typing import TypeVar, Union
+
 import pytest
 
 from mathlib import numbers
+
+T = TypeVar("T", bound=Union[int, float])
+
+
+@pytest.mark.parametrize(
+    ("base", "exponent", "expected"), [(2, 3, 8), (3, 2, 9), (5, 0, 1), (2.0, 3, 8.0)]
+)
+def test_typed_pow(base: T, exponent: int, expected: T) -> None:
+    assert numbers.typed_pow(base, exponent) == expected
+
+
+def test_typed_pow_with_negative() -> None:
+    with pytest.raises(ValueError, match="Exponent must be non-negative"):
+        numbers.typed_pow(2, -3)
 
 
 @pytest.mark.parametrize(
@@ -26,6 +42,14 @@ def test_gcd(integers: list[int], expected: int) -> None:
 )
 def test_lcm(integers: list[int], expected: int) -> None:
     assert numbers.lcm(*integers) == expected
+
+
+@pytest.mark.parametrize(
+    ("number", "root"),
+    [(1, 1), (2, 1), (3, 1), (4, 2), (765**2, 765)],
+)
+def test_isqrt(number: int, root: int) -> None:
+    assert numbers.isqrt(number) == root
 
 
 @pytest.mark.parametrize(("a", "b"), [(7, 3), (872, 7959), (7959, 872), (42, 35129)])
@@ -85,3 +109,14 @@ def test_binomial(n: int, k: int, expected: int) -> None:
 )
 def test_polygonal_number(s: int, n: int, expected: int) -> None:
     assert numbers.polygonal_number(s, n) == expected
+
+
+@pytest.mark.parametrize(
+    ("primitive_only", "expected"),
+    [(False, [(3, 4, 5), (6, 8, 10), (5, 12, 13)]), (True, [(3, 4, 5), (5, 12, 13)])],
+)
+def test_pythagorean_triplets(
+    primitive_only: bool, expected: list[tuple[int, int, int]]
+) -> None:
+    generator = numbers.pythagorean_triplets(30, primitive_only=primitive_only)
+    assert list(generator) == expected

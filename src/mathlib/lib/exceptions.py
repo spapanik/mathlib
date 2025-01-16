@@ -7,6 +7,6 @@ class UnreachableCodeError(AssertionError):
     This is to aid static analysers.
     """
 
-    def __init__(self) -> None:
+    def __init__(self) -> None:  # pragma: no cover
         doc = dedent(self.__doc__ or "")
         super().__init__(doc)

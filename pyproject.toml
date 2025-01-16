@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-    "phosphorus>=0.9",
+    "phosphorus>=0.10",
 ]
 build-backend = "phosphorus.construction.api"
 
@@ -39,15 +39,22 @@ documentation = "https://mathlib.readthedocs.io/en/stable/"
 dev = [
     "ipdb~=0.13",
     "ipython~=8.18",
+    { include-group = "lint" },
+    { include-group = "test" },
+    { include-group = "docs" },
 ]
 lint = [
     "black~=24.10",
-    "mypy~=1.13",
+    "mypy~=1.14",
     "ruff~=0.8",
+    { include-group = "test_core" },
 ]
 test = [
-    "pytest~=8.3",
     "pytest-cov~=6.0",
+    { include-group = "test_core" },
+]
+test_core = [
+    "pytest~=8.3",
 ]
 docs = [
     "mkdocs~=1.6",
@@ -151,8 +158,9 @@ omit = [
 exclude_also = [
     "if TYPE_CHECKING:",
     "raise NotImplementedError",
+    "raise UnreachableCodeError",
 ]
-fail_under = 75
+fail_under = 100
 precision = 2
 show_missing = true
 skip_covered = true

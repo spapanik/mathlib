@@ -17,10 +17,8 @@ if TYPE_CHECKING:
         (2, []),
         (3, [2]),
         (4, [2, 3]),
-        (5, [2, 3]),
-        (6, [2, 3, 5]),
-        (11, [2, 3, 5, 7]),
-        (12, [2, 3, 5, 7, 11]),
+        (19, [2, 3, 5, 7, 11, 13, 17]),
+        (20, [2, 3, 5, 7, 11, 13, 17, 19]),
     ],
 )
 def test_sieve_two_arguments(upper_bound: int, prime_numbers: list[int]) -> None:
@@ -28,35 +26,45 @@ def test_sieve_two_arguments(upper_bound: int, prime_numbers: list[int]) -> None
 
 
 @pytest.mark.parametrize(
-    "number", [2, 3, 5, 41, 97, 1234577, 9000011, 21326017, 593441861]
-)
-def test_is_prime(number: int) -> None:
-    assert primes.is_prime(number) is True
-
-
-@pytest.mark.parametrize(
-    "number",
+    ("number", "is_prime"),
     [
-        1,
-        4,
-        6,
-        25,
-        2133,
-        1373889,
-        9080339,
-        25326215,
-        4759123293,
-        1122004669803,
-        2152302898947,
-        3474749660601,
-        341550071728525,
-        3825123056546413239,
-        318665857834031151167663,
-        3317044064679887385962127,
+        (1, False),
+        (2, True),
+        (3, True),
+        (4, False),
+        (5, True),
+        (6, False),
+        (25, False),
+        (41, True),
+        (97, True),
+        (2_133, False),
+        (1_234_577, True),
+        (1_373_889, False),
+        (9_000_011, True),
+        (9_080_339, False),
+        (21_326_017, True),
+        (25_326_215, False),
+        (593_441_861, True),
+        (4_759_123_151, True),
+        (4_759_123_293, False),
+        (1_122_004_669_637, True),
+        (1_122_004_669_803, False),
+        (2_152_302_898_771, True),
+        (2_152_302_898_947, False),
+        (3_474_749_660_401, True),
+        (3_474_749_660_601, False),
+        (341_550_071_728_361, True),
+        (341_550_071_728_525, False),
+        (3_825_123_056_546_413_057, True),
+        (3_825_123_056_546_413_239, False),
+        (318_665_857_834_031_151_167_483, True),
+        (318_665_857_834_031_151_167_663, False),
+        (3_317_044_064_679_887_385_962_127, False),
+        (33_170_440_646_798_873_859_621_270, False),
     ],
 )
-def test_is_not_prime(number: int) -> None:
-    assert primes.is_prime(number) is False
+def test_is_prime(number: int, is_prime: bool) -> None:
+    assert primes.is_prime(number) is is_prime
 
 
 @pytest.mark.parametrize(

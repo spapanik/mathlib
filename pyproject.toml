@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-    "phosphorus>=0.9",
+    "phosphorus>=0.10",
 ]
 build-backend = "phosphorus.construction.api"
 
@@ -39,27 +39,28 @@ documentation = "https://mathlib.readthedocs.io/en/stable/"
 dev = [
     "ipdb~=0.13",
     "ipython~=8.18",
+    { include-group = "lint" },
+    { include-group = "test" },
+    { include-group = "docs" },
 ]
 lint = [
-    "black~=24.10",
-    "mypy~=1.13",
-    "ruff~=0.8",
+    "mypy~=1.15",
+    "ruff~=0.9",
+    { include-group = "test_core" },
 ]
 test = [
-    "pytest~=8.3",
     "pytest-cov~=6.0",
+    { include-group = "test_core" },
+]
+test_core = [
+    "pytest~=8.3",
 ]
 docs = [
     "mkdocs~=1.6",
-    "mkdocs-material~=9.5",
+    "mkdocs-material~=9.6",
     "mkdocs-material-extensions~=1.3",
-    "pygments~=2.18",
-    "pymdown-extensions~=10.12",
-]
-
-[tool.black]
-target-version = [
-    "py39",
+    "pygments~=2.19",
+    "pymdown-extensions~=10.14",
 ]
 
 [tool.mypy]
@@ -104,11 +105,10 @@ select = [
 ]
 ignore = [
     "C901",   # Adding a limit to complexity is too arbitrary
-    "COM812", # Avoid magic trailing commas
+    "COM812", # Avoid conflicts with the formatter
     "D10",    # Not everything needs a docstring
     "D203",   # Prefer `no-blank-line-before-class` (D211)
     "D213",   # Prefer `multi-line-summary-first-line` (D212)
-    "E501",   # Avoid clashes with black
     "PLR09",  # Adding a limit to complexity is too arbitrary
 ]
 
@@ -151,8 +151,9 @@ omit = [
 exclude_also = [
     "if TYPE_CHECKING:",
     "raise NotImplementedError",
+    "raise UnreachableCodeError",
 ]
-fail_under = 75
+fail_under = 100
 precision = 2
 show_missing = true
 skip_covered = true

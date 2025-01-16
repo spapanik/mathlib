@@ -108,51 +108,51 @@ def _miller_rabin_loop(witness: int, mantissa: int, power: int, n: int) -> bool:
 
 
 def _miller_rabin_witnesses(n: int) -> Iterator[int]:
-    if n < 2047:  # noqa: PLR2004
+    if n < 2_047:  # noqa: PLR2004
         yield from [2]
         return
 
-    if n < 1373653:  # noqa: PLR2004
+    if n < 1_373_653:  # noqa: PLR2004
         yield from [2, 3]
         return
 
-    if n < 9080191:  # noqa: PLR2004
+    if n < 9_080_191:  # noqa: PLR2004
         yield from [31, 73]
         return
 
-    if n < 25326001:  # noqa: PLR2004
+    if n < 25_326_001:  # noqa: PLR2004
         yield from [2, 3, 5]
         return
 
-    if n < 4759123141:  # noqa: PLR2004
+    if n < 4_759_123_141:  # noqa: PLR2004
         yield from [2, 7, 61]
         return
 
-    if n < 1122004669633:  # noqa: PLR2004
+    if n < 1_122_004_669_633:  # noqa: PLR2004
         yield from [2, 13, 23, 1662803]
         return
 
-    if n < 2152302898747:  # noqa: PLR2004
+    if n < 2_152_302_898_747:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11]
         return
 
-    if n < 3474749660383:  # noqa: PLR2004
+    if n < 3_474_749_660_383:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13]
         return
 
-    if n < 341550071728321:  # noqa: PLR2004
+    if n < 341_550_071_728_321:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13, 17]
         return
 
-    if n < 3825123056546413051:  # noqa: PLR2004
+    if n < 3_825_123_056_546_413_051:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13, 17, 19, 23]
         return
 
-    if n < 318665857834031151167461:  # noqa: PLR2004
+    if n < 318_665_857_834_031_151_167_461:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
         return
 
-    if n < 3317044064679887385961981:  # noqa: PLR2004
+    if n < 3_317_044_064_679_887_385_961_981:  # noqa: PLR2004
         yield from [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
         return
 
@@ -209,7 +209,7 @@ def primes() -> Iterator[int]:
     """Make an iterator that returns the prime numbers in ascending order."""
     yield 2
 
-    for n in count(3, 2):
+    for n in count(3, 2):  # pragma: no branch
         if is_prime(n):
             yield n
 

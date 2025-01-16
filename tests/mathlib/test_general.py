@@ -63,3 +63,9 @@ class TestCollatz:
     def test_get_steps(value: int, expected: int) -> None:
         collatz = Collatz()
         assert collatz[value] == expected
+
+    @staticmethod
+    def test_get_negative_steps() -> None:
+        collatz = Collatz()
+        with pytest.raises(ValueError, match="item must be a positive integer"):
+            collatz[-1]

@@ -39,6 +39,7 @@ def test_sieve(upper_bound: int, prime_numbers: list[int]) -> None:
         (25, False),
         (41, True),
         (97, True),
+        (1_026, False),
         (2_133, False),
         (1_234_577, True),
         (1_373_889, False),
@@ -62,7 +63,7 @@ def test_sieve(upper_bound: int, prime_numbers: list[int]) -> None:
         (318_665_857_834_031_151_167_483, True),
         (318_665_857_834_031_151_167_663, False),
         (3_317_044_064_679_887_385_962_127, False),
-        (33_170_440_646_798_873_859_621_270, False),
+        (33_170_440_646_798_873_859_621_271, False),
     ],
 )
 def test_is_prime(number: int, is_prime: bool) -> None:

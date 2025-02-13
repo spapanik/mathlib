@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog], and this project adheres to [Semantic
 
 ## [Unreleased]
 
+### Changed
+
+-   Improved prime sieve performance
+
 ## [0.6.0] - 2024-12-18
 
 ### Added

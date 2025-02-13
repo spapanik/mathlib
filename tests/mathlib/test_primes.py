@@ -17,11 +17,13 @@ if TYPE_CHECKING:
         (2, []),
         (3, [2]),
         (4, [2, 3]),
+        (5, [2, 3]),
         (19, [2, 3, 5, 7, 11, 13, 17]),
         (20, [2, 3, 5, 7, 11, 13, 17, 19]),
+        (256, sorted(primes.SMALL_PRIMES)),
     ],
 )
-def test_sieve_two_arguments(upper_bound: int, prime_numbers: list[int]) -> None:
+def test_sieve(upper_bound: int, prime_numbers: list[int]) -> None:
     assert list(primes.sieve(upper_bound)) == prime_numbers
 
 

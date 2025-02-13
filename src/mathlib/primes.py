@@ -74,28 +74,22 @@ def sieve(upper_bound: int) -> Iterator[int]:
     This method uses the sieve of Eratosthenes to return the
     primes.
     """
-    if upper_bound <= 5:  # noqa: PLR2004
-        if upper_bound > 2:  # noqa: PLR2004
-            yield 2
-
-        if upper_bound > 3:  # noqa: PLR2004
-            yield 3
-
+    if upper_bound <= 2:  # noqa: PLR2004
         return
 
     yield 2
 
-    upper_bound = (upper_bound >> 1) - 1
-    indices = [True] * upper_bound
-    end_range = int(math.sqrt(upper_bound)) + 1
+    index_count = (upper_bound >> 1) - 1
+    indices = [True] * index_count
+    end_range = (math.isqrt(upper_bound) - 1) // 2
     for i in range(end_range):
         if indices[i]:
             slice_start = 2 * i * i + 6 * i + 3
             slice_step = 2 * i + 3
-            number_of_primes = math.ceil((upper_bound - slice_start) / slice_step)
-            indices[slice_start::slice_step] = [False] * number_of_primes
+            multiples = math.ceil((index_count - slice_start) / slice_step)
+            indices[slice_start::slice_step] = [False] * multiples
 
-    for i in range(upper_bound):
+    for i in range(index_count):
         if indices[i]:
             yield 2 * i + 3
 

@@ -144,6 +144,7 @@ source = [
 ]
 data_file = ".cov_cache/coverage.dat"
 omit = [
+    "src/mathlib/_seven.py",
     "src/mathlib/lib/type_defs.py",
 ]
 

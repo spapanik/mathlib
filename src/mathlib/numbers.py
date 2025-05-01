@@ -1,4 +1,3 @@
-# noqa: A005
 from __future__ import annotations
 
 import math
@@ -18,7 +17,7 @@ def typed_pow(base: T, exponent: int) -> T:
     if exponent < 0:
         msg = "Exponent must be non-negative"
         raise ValueError(msg)
-    return cast(T, base**exponent)
+    return cast("T", base**exponent)
 
 
 def gcd(*integers: int) -> int:

@@ -8,11 +8,11 @@ The format is based on [Keep a Changelog], and this project adheres to [Semantic
 
 ### Changed
 
--   Improved prime sieve performance
+- Improved prime sieve performance
 
 ### Removed
 
--   Dropped python 3.9 support
+- Dropped python 3.9 support
 
 ## [0.6.0] - 2024-12-18
 
@@ -108,7 +108,7 @@ The format is based on [Keep a Changelog], and this project adheres to [Semantic
 
 - Added a method to check whether a number is prime
 
-[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
+[Keep a Changelog]: https://keepachangelog.com/en/1.1.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
 [Unreleased]: https://github.com/spapanik/mathlib/compare/v0.6.0...master
 [0.6.0]: https://github.com/spapanik/mathlib/compare/v0.5.0...v0.6.0

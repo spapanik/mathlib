@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 import math
-from typing import TYPE_CHECKING, TypeVar, Union, cast
+from typing import TYPE_CHECKING, TypeVar, cast
 
 if TYPE_CHECKING:
     from collections.abc import Iterator
 
-T = TypeVar("T", bound=Union[int, float])
+T = TypeVar("T", bound=int | float)
 
 
 def typed_pow(base: T, exponent: int) -> T:

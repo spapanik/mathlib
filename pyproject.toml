@@ -45,7 +45,7 @@ dev = [
 ]
 lint = [
     "mypy~=1.16",
-    "ruff~=0.11",
+    "ruff~=0.12",
     { include-group = "test_core" },
 ]
 test = [
@@ -97,7 +97,7 @@ disallow_any_decorated = false # mock.MagicMock is Any
 src = [
     "src",
 ]
-target-version = "py39"
+target-version = "py310"
 
 [tool.ruff.lint]
 select = [

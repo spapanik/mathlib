@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from typing import TypeVar, Union
+from typing import TypeVar
 
 import pytest
 
 from mathlib import numbers
 
-T = TypeVar("T", bound=Union[int, float])
+T = TypeVar("T", bound=int | float)
 
 
 @pytest.mark.parametrize(

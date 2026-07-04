@@ -52,11 +52,11 @@ jobs:
         uses: codecov/codecov-action@v7.0.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: spapanik/cloninator
+          slug: spapanik/mathlib
           files: ./coverage.xml
       - name: Upload test results to Codecov
         if: ${{ !cancelled() }}
-        uses: codecov/test-results-action@v1
+        uses: codecov/codecov-action@v7.0.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: spapanik/mathlib
